@@ -1,0 +1,44 @@
+[
+  {
+    "level_": 0,
+    "message_": "Start JSON generation. Platform version: 24 min SDK version: x86_64",
+    "file_": "/workspace/Degoogled-Android-Auto/app/src/main/cpp/CMakeLists.txt",
+    "tag_": "release|x86_64",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 755546164
+  },
+  {
+    "level_": 0,
+    "message_": "JSON \u0027/workspace/Degoogled-Android-Auto/app/.cxx/RelWithDebInfo/1r1f6t5w/x86_64/android_gradle_build.json\u0027 was up-to-date",
+    "file_": "/workspace/Degoogled-Android-Auto/app/src/main/cpp/CMakeLists.txt",
+    "tag_": "release|x86_64",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -101179393
+  },
+  {
+    "level_": 0,
+    "message_": "JSON generation completed without problems",
+    "file_": "/workspace/Degoogled-Android-Auto/app/src/main/cpp/CMakeLists.txt",
+    "tag_": "release|x86_64",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 1582462161
+  }
+]

@@ -1,0 +1,2 @@
+ninja: Entering directory `/workspace/Degoogled-Android-Auto/app/.cxx/RelWithDebInfo/1r1f6t5w/x86_64'
+ninja: no work to do.

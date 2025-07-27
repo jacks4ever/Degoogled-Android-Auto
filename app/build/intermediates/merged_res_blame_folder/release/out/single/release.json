@@ -1,0 +1,54 @@
+[
+    {
+        "merged": "com.degoogled.androidauto.app-merged_res-36:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.degoogled.androidauto.app-main-37:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.degoogled.androidauto.app-merged_res-36:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.degoogled.androidauto.app-main-37:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.degoogled.androidauto.app-merged_res-36:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.degoogled.androidauto.app-main-37:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.degoogled.androidauto.app-merged_res-36:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.degoogled.androidauto.app-main-37:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.degoogled.androidauto.app-merged_res-36:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.degoogled.androidauto.app-main-37:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.degoogled.androidauto.app-merged_res-36:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.degoogled.androidauto.app-main-37:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/root/.gradle/daemon/7.5/com.degoogled.androidauto.app-merged_res-36:/menu_bottom_navigation_menu.xml.flat",
+        "source": "/root/.gradle/daemon/7.5/com.degoogled.androidauto.app-main-37:/menu/bottom_navigation_menu.xml"
+    },
+    {
+        "merged": "com.degoogled.androidauto.app-merged_res-36:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.degoogled.androidauto.app-main-37:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.degoogled.androidauto.app-merged_res-36:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.degoogled.androidauto.app-main-37:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/root/.gradle/daemon/7.5/com.degoogled.androidauto.app-merged_res-36:/layout_activity_main.xml.flat",
+        "source": "/root/.gradle/daemon/7.5/com.degoogled.androidauto.app-main-37:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.degoogled.androidauto.app-merged_res-36:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.degoogled.androidauto.app-main-37:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/root/.gradle/daemon/7.5/com.degoogled.androidauto.app-merged_res-36:/xml_accessory_filter.xml.flat",
+        "source": "/root/.gradle/daemon/7.5/com.degoogled.androidauto.app-main-37:/xml/accessory_filter.xml"
+    },
+    {
+        "merged": "com.degoogled.androidauto.app-merged_res-36:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.degoogled.androidauto.app-main-37:/mipmap-mdpi/ic_launcher_round.png"
+    }
+]

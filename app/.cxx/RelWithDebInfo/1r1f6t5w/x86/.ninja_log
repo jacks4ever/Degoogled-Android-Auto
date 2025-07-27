@@ -1,0 +1,3 @@
+# ninja log v5
+0	261	1753660472072782618	CMakeFiles/native-lib.dir/native-lib.cpp.o	2c36c68c2831f4cc
+262	281	1753660472092782571	/workspace/Degoogled-Android-Auto/app/build/intermediates/cxx/RelWithDebInfo/1r1f6t5w/obj/x86/libnative-lib.so	7502565614aedccf

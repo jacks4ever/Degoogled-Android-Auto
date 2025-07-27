@@ -1,0 +1,4 @@
+/workspace/android-sdk/cmake/3.22.1/bin/ninja \
+  -C \
+  /workspace/Degoogled-Android-Auto/app/.cxx/RelWithDebInfo/1r1f6t5w/x86_64 \
+  native-lib

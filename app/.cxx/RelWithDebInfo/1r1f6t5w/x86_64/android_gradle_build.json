@@ -1,0 +1,38 @@
+{
+  "buildFiles": [
+    "/workspace/Degoogled-Android-Auto/app/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/workspace/android-sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/workspace/Degoogled-Android-Auto/app/.cxx/RelWithDebInfo/1r1f6t5w/x86_64",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/workspace/android-sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/workspace/Degoogled-Android-Auto/app/.cxx/RelWithDebInfo/1r1f6t5w/x86_64",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "native-lib::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "x86_64",
+      "artifactName": "native-lib",
+      "output": "/workspace/Degoogled-Android-Auto/app/build/intermediates/cxx/RelWithDebInfo/1r1f6t5w/obj/x86_64/libnative-lib.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/workspace/android-sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/bin/clang.lld",
+      "cppCompilerExecutable": "/workspace/android-sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++.lld"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}
