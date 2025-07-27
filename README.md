@@ -142,4 +142,4 @@ This project is based on the following open-source projects:
 
 ## Disclaimer
 
-This project is not affiliated with Google, Android, or Android Auto. Android Auto is a trademark of Google LLC.
+This project is not affiliated with Google, Android, or Android Auto. Android Auto is a trademark of Google LLC.# Additional information
