@@ -10,6 +10,10 @@ color primary_light
 color primary_text
 color secondary_text
 color white
+id action_connect
+id action_diagnostics
+id action_disconnect
+id action_export_logs
 id appContainer
 id bottomNavigation
 id media
@@ -19,6 +23,7 @@ id phone
 id settings
 layout activity_main
 menu bottom_navigation_menu
+menu main_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
@@ -35,3 +40,4 @@ string settings
 style Theme.DegoogledAndroidAuto
 style Theme.DegoogledAndroidAuto.NoActionBar
 xml accessory_filter
+xml device_filter

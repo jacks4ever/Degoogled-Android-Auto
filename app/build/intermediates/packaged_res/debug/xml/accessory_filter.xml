@@ -1,7 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Standard Android Auto accessory mode -->
     <usb-accessory
         manufacturer="Android"
         model="Android Auto"
+        version="1.0" />
+    
+    <!-- Nissan-specific Android Auto configurations -->
+    <usb-accessory
+        manufacturer="NISSAN"
+        model="Android Auto"
+        version="1.0" />
+    
+    <usb-accessory
+        manufacturer="Nissan"
+        model="AndroidAuto"
+        version="1.0" />
+        
+    <!-- Nissan Pathfinder 2023 specific configuration -->
+    <usb-accessory
+        manufacturer="Nissan"
+        model="Pathfinder"
+        version="2023" />
+        
+    <usb-accessory
+        manufacturer="NISSAN"
+        model="PATHFINDER"
+        version="2023" />
+        
+    <!-- Generic automotive head unit compatibility -->
+    <usb-accessory
+        manufacturer="Google"
+        model="Android Auto"
+        version="1.0" />
+        
+    <!-- Additional compatibility for various head unit manufacturers -->
+    <usb-accessory
+        manufacturer="Android"
+        model="AndroidAuto"
+        version="2.0" />
+        
+    <!-- Fallback for any Android Auto compatible head unit -->
+    <usb-accessory
+        manufacturer="Android"
+        model="Android Auto Compatible"
         version="1.0" />
 </resources>
