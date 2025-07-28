@@ -14,9 +14,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * Handles the Android Auto protocol communication with the head unit.
- * Implements multiple authentication strategies to work with various head units
- * including Nissan Pathfinder without requiring Google services.
+ * Simplified Android Auto protocol handler that integrates with the enhanced features
+ * while maintaining compatibility with the existing codebase.
  */
 public class ProtocolHandler implements UsbDeviceManager.UsbConnectionListener {
     private static final String TAG = "ProtocolHandler";
@@ -256,8 +255,7 @@ public class ProtocolHandler implements UsbDeviceManager.UsbConnectionListener {
                 // Forward other message types to the listener
                 if (state == ConnectionState.CONNECTED && protocolListener != null) {
                     final byte[] messageCopy = Arrays.copyOf(data, length);
-                    final int msgType = messageType;
-                    mainHandler.post(() -> protocolListener.onProtocolMessage(msgType, messageCopy));
+                    mainHandler.post(() -> protocolListener.onProtocolMessage(messageType, messageCopy));
                 }
                 break;
         }
