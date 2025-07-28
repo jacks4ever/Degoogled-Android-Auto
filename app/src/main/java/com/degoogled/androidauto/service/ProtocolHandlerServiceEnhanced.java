@@ -13,6 +13,9 @@ import android.util.Log;
 
 import com.degoogled.androidauto.logging.ConnectionLogger;
 import com.degoogled.androidauto.ui.NissanDisplayAdapter;
+import com.degoogled.androidauto.usb.UsbCommunicationManager;
+import com.degoogled.androidauto.apps.OsmAndIntegration;
+import com.degoogled.androidauto.apps.VLCIntegration;
 
 import java.util.HashMap;
 
@@ -38,6 +41,9 @@ public class ProtocolHandlerServiceEnhanced extends Service {
     private UsbManager usbManager;
     private UsbConnectionHandler connectionHandler;
     private AuthenticationManager authManager;
+    private UsbCommunicationManager usbCommunicationManager;
+    private OsmAndIntegration osmAndIntegration;
+    private VLCIntegration vlcIntegration;
     
     // Connection state tracking
     private boolean isConnected = false;
@@ -56,6 +62,17 @@ public class ProtocolHandlerServiceEnhanced extends Service {
         usbManager = (UsbManager) getSystemService(Context.USB_SERVICE);
         connectionHandler = new UsbConnectionHandler();
         authManager = new AuthenticationManager();
+        
+        // Initialize USB communication manager
+        usbCommunicationManager = new UsbCommunicationManager(this, logger);
+        usbCommunicationManager.setListener(new UsbCommunicationListener());
+        
+        // Initialize app integrations
+        osmAndIntegration = new OsmAndIntegration(this, logger);
+        osmAndIntegration.setNavigationListener(new NavigationListener());
+        
+        vlcIntegration = new VLCIntegration(this, logger);
+        vlcIntegration.setMediaListener(new MediaListener());
         
         // Register USB broadcast receivers
         registerUSBReceivers();
@@ -290,27 +307,42 @@ public class ProtocolHandlerServiceEnhanced extends Service {
         
         public void proceedWithDeviceConnection(UsbDevice device) {
             logger.logInfo("Proceeding with device connection");
-            // Device connection implementation would go here
-            isConnected = true;
             
-            // Start authentication
-            authManager.startAuthentication(device, null);
+            // Use USB communication manager for actual connection
+            boolean connected = usbCommunicationManager.connectToDevice(device);
+            if (connected) {
+                isConnected = true;
+                // Authentication will be handled by the protocol layer
+                authManager.startAuthentication(device, null);
+            } else {
+                logger.logError("Failed to establish USB device connection");
+            }
         }
         
         public void proceedWithAccessoryConnection(UsbAccessory accessory) {
             logger.logInfo("Proceeding with accessory connection");
-            // Accessory connection implementation would go here
-            isConnected = true;
             
-            // Start authentication
-            authManager.startAuthentication(null, accessory);
+            // Use USB communication manager for actual connection
+            boolean connected = usbCommunicationManager.connectToAccessory(accessory);
+            if (connected) {
+                isConnected = true;
+                // Authentication will be handled by the protocol layer
+                authManager.startAuthentication(null, accessory);
+            } else {
+                logger.logError("Failed to establish USB accessory connection");
+            }
         }
         
         public void disconnect() {
             logger.logInfo("Disconnecting USB connection");
+            
+            // Disconnect USB communication manager
+            if (usbCommunicationManager != null) {
+                usbCommunicationManager.disconnect();
+            }
+            
             isConnected = false;
             isAuthenticated = false;
-            // Cleanup connection resources
         }
     }
     
@@ -490,5 +522,194 @@ public class ProtocolHandlerServiceEnhanced extends Service {
     
     public NissanDisplayAdapter getDisplayAdapter() {
         return displayAdapter;
+    }
+    
+    /**
+     * USB Communication Listener - handles USB communication events
+     */
+    private class UsbCommunicationListener implements UsbCommunicationManager.UsbCommunicationListener {
+        @Override
+        public void onConnected() {
+            logger.logInfo("USB communication established");
+            isConnected = true;
+        }
+        
+        @Override
+        public void onDisconnected() {
+            logger.logInfo("USB communication disconnected");
+            isConnected = false;
+            isAuthenticated = false;
+        }
+        
+        @Override
+        public void onMessageReceived(byte[] message) {
+            logger.logDebug("Protocol message received: " + message.length + " bytes");
+            // Message is already processed by the protocol layer
+        }
+        
+        @Override
+        public void onError(String error) {
+            logger.logError("USB communication error: " + error);
+            isConnected = false;
+            isAuthenticated = false;
+        }
+    }
+    
+    /**
+     * Navigation Listener - handles OsmAnd navigation events
+     */
+    private class NavigationListener implements OsmAndIntegration.NavigationListener {
+        @Override
+        public void onNavigationStarted(String destination) {
+            logger.logInfo("Navigation started to: " + destination);
+            
+            // Request navigation focus from head unit
+            if (usbCommunicationManager != null && usbCommunicationManager.isConnected()) {
+                usbCommunicationManager.requestNavigationFocus();
+            }
+        }
+        
+        @Override
+        public void onNavigationStopped() {
+            logger.logInfo("Navigation stopped");
+        }
+        
+        @Override
+        public void onNavigationUpdate(OsmAndIntegration.NavigationInfo info) {
+            logger.logDebug("Navigation update: " + info.instruction);
+            // Could send navigation data to head unit display
+        }
+        
+        @Override
+        public void onNavigationError(String error) {
+            logger.logError("Navigation error: " + error);
+        }
+    }
+    
+    /**
+     * Media Listener - handles VLC media events
+     */
+    private class MediaListener implements VLCIntegration.MediaListener {
+        @Override
+        public void onPlaybackStarted(VLCIntegration.MediaInfo info) {
+            logger.logInfo("Media playback started: " + info.title);
+            
+            // Request audio focus from head unit
+            if (usbCommunicationManager != null && usbCommunicationManager.isConnected()) {
+                usbCommunicationManager.requestAudioFocus(1); // Media focus type
+            }
+        }
+        
+        @Override
+        public void onPlaybackPaused() {
+            logger.logInfo("Media playback paused");
+        }
+        
+        @Override
+        public void onPlaybackStopped() {
+            logger.logInfo("Media playback stopped");
+        }
+        
+        @Override
+        public void onTrackChanged(VLCIntegration.MediaInfo info) {
+            logger.logInfo("Track changed: " + info.title);
+        }
+        
+        @Override
+        public void onPositionChanged(int position, int duration) {
+            logger.logDebug("Media position: " + position + "/" + duration);
+        }
+        
+        @Override
+        public void onMediaError(String error) {
+            logger.logError("Media error: " + error);
+        }
+    }
+    
+    // Public methods for external control
+    
+    /**
+     * Start navigation to coordinates
+     */
+    public boolean startNavigation(double latitude, double longitude, String name) {
+        if (osmAndIntegration != null) {
+            return osmAndIntegration.navigateToCoordinates(latitude, longitude, name);
+        }
+        return false;
+    }
+    
+    /**
+     * Start navigation to address
+     */
+    public boolean startNavigation(String address) {
+        if (osmAndIntegration != null) {
+            return osmAndIntegration.navigateToAddress(address);
+        }
+        return false;
+    }
+    
+    /**
+     * Stop navigation
+     */
+    public boolean stopNavigation() {
+        if (osmAndIntegration != null) {
+            return osmAndIntegration.stopNavigation();
+        }
+        return false;
+    }
+    
+    /**
+     * Play media file
+     */
+    public boolean playMedia(String filePath) {
+        if (vlcIntegration != null) {
+            return vlcIntegration.playMedia(filePath);
+        }
+        return false;
+    }
+    
+    /**
+     * Control media playback
+     */
+    public boolean controlMedia(String action) {
+        if (vlcIntegration == null) {
+            return false;
+        }
+        
+        switch (action.toLowerCase()) {
+            case "play":
+                return vlcIntegration.play();
+            case "pause":
+                return vlcIntegration.pause();
+            case "stop":
+                return vlcIntegration.stop();
+            case "next":
+                return vlcIntegration.nextTrack();
+            case "previous":
+                return vlcIntegration.previousTrack();
+            default:
+                logger.logWarning("Unknown media action: " + action);
+                return false;
+        }
+    }
+    
+    /**
+     * Get navigation status
+     */
+    public OsmAndIntegration.NavigationStatus getNavigationStatus() {
+        if (osmAndIntegration != null) {
+            return osmAndIntegration.getNavigationStatus();
+        }
+        return null;
+    }
+    
+    /**
+     * Get media status
+     */
+    public VLCIntegration.MediaStatus getMediaStatus() {
+        if (vlcIntegration != null) {
+            return vlcIntegration.getMediaStatus();
+        }
+        return null;
     }
 }

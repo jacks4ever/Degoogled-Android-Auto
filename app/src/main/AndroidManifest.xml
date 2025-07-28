@@ -66,8 +66,24 @@
                 android:resource="@xml/device_filter" />
         </activity>
         
+        <activity
+            android:name=".TestActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.DegoogledAndroidAuto">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
         <service
             android:name=".service.ProtocolHandlerService"
+            android:enabled="true"
+            android:exported="false" />
+            
+        <service
+            android:name=".service.ProtocolHandlerServiceEnhanced"
             android:enabled="true"
             android:exported="false" />
             

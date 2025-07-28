@@ -2889,9 +2889,13 @@ id action_bar_root
 id action_bar_spinner
 id action_bar_subtitle
 id action_bar_title
+id action_connect
 id action_container
 id action_context_bar
+id action_diagnostics
+id action_disconnect
 id action_divider
+id action_export_logs
 id action_image
 id action_menu_divider
 id action_menu_presenter
@@ -3535,6 +3539,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 menu bottom_navigation_menu
+menu main_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
@@ -5006,3 +5011,4 @@ styleable ViewStubCompat android_id android_layout android_inflatedId
 styleable ViewTransition android_id SharedValue SharedValueId clearsTag duration ifTagNotSet ifTagSet motionInterpolator motionTarget onStateTransition pathMotionArc setsTag transitionDisable upDuration viewTransitionMode
 styleable include constraintSet
 xml accessory_filter
+xml device_filter

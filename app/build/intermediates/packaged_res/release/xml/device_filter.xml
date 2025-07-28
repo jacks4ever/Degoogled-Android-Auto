@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Android Open Accessory Protocol (AOAP) IDs -->
+    <!-- Standard AOAP accessory mode -->
+    <usb-device vendor-id="6353" product-id="11520" /> <!-- 0x18D1, 0x2D00 -->
+    <usb-device vendor-id="6353" product-id="11521" /> <!-- 0x18D1, 0x2D01 -->
+    
+    <!-- AOAP with ADB support -->
+    <usb-device vendor-id="6353" product-id="11522" /> <!-- 0x18D1, 0x2D02 -->
+    <usb-device vendor-id="6353" product-id="11523" /> <!-- 0x18D1, 0x2D03 -->
+    
+    <!-- Extended AOAP support -->
+    <usb-device vendor-id="6353" product-id="11524" /> <!-- 0x18D1, 0x2D04 -->
+    <usb-device vendor-id="6353" product-id="11525" /> <!-- 0x18D1, 0x2D05 -->
+    
+    <!-- Common automotive head unit vendor IDs -->
+    <!-- Pioneer -->
+    <usb-device vendor-id="1240" /> <!-- 0x04D8 -->
+    
+    <!-- Kenwood -->
+    <usb-device vendor-id="1363" /> <!-- 0x0553 -->
+    
+    <!-- Alpine -->
+    <usb-device vendor-id="1041" /> <!-- 0x0411 -->
+    
+    <!-- Sony -->
+    <usb-device vendor-id="1356" /> <!-- 0x054C -->
+    
+    <!-- JVC -->
+    <usb-device vendor-id="1164" /> <!-- 0x048C -->
+    
+    <!-- Clarion -->
+    <usb-device vendor-id="1204" /> <!-- 0x04B4 -->
+    
+    <!-- Generic automotive USB hub/interface chips -->
+    <!-- FTDI (commonly used in automotive applications) -->
+    <usb-device vendor-id="1027" /> <!-- 0x0403 -->
+    
+    <!-- Cypress (automotive USB controllers) -->
+    <usb-device vendor-id="1204" /> <!-- 0x04B4 -->
+    
+    <!-- Microchip (automotive microcontrollers) -->
+    <usb-device vendor-id="1240" /> <!-- 0x04D8 -->
+</resources>

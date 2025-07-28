@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:2:1-63:12
-INJECTED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:2:1-63:12
-INJECTED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:2:1-63:12
-INJECTED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:2:1-63:12
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:2:1-85:12
+INJECTED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:2:1-85:12
+INJECTED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:2:1-85:12
+INJECTED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:2:1-85:12
 MERGED from [androidx.databinding:viewbinding:7.4.2] /root/.gradle/caches/transforms-3/2e5a15fdae7174e6e7d682593cbb98c6/transformed/viewbinding-7.4.2/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.8.0] /root/.gradle/caches/transforms-3/1d6008e40b174b18ef5fa9ea4cd35014/transformed/material-1.8.0/AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /root/.gradle/caches/transforms-3/4b929ab10fd806b94f86bd527f89dd0a/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
@@ -48,85 +48,117 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] /root/.gradle/caches/tran
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /root/.gradle/caches/transforms-3/4a128805ae54552b7183634231e39ff5/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /root/.gradle/caches/transforms-3/ae4109ec1e873f2074e4c3a60211a759/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /root/.gradle/caches/transforms-3/9d8d7feb3580355ffff343143a4678dc/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:17:1-22:12
-INJECTED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:2:1-63:12
-INJECTED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:2:1-63:12
-INJECTED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:2:1-63:12
+INJECTED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:2:1-85:12
+INJECTED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:2:1-85:12
+INJECTED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:2:1-85:12
 	package
 		INJECTED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:2:1-63:12
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:2:1-85:12
 		INJECTED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:2:1-63:12
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:2:1-85:12
 		INJECTED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:2:1-63:12
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:2:1-85:12
 		INJECTED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:4:5-67
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:5:5-67
 	android:name
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:4:22-64
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:5:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:5:5-79
-	android:name
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:5:22-76
-uses-permission#android.permission.ACCESS_FINE_LOCATION
 ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:6:5-79
 	android:name
 		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:6:22-76
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:7:5-79
+	android:name
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:7:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:7:5-81
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:8:5-81
 	android:name
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:7:22-78
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:8:22-78
 uses-permission#android.permission.BLUETOOTH
-ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:8:5-68
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:9:5-68
 	android:name
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:8:22-65
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:9:22-65
 uses-permission#android.permission.BLUETOOTH_ADMIN
-ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:9:5-74
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:10:5-74
 	android:name
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:9:22-71
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:10:22-71
 uses-permission#android.permission.BLUETOOTH_CONNECT
-ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:10:5-76
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:11:5-76
 	android:name
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:10:22-73
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:11:22-73
 uses-permission#android.permission.RECORD_AUDIO
-ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:11:5-71
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:12:5-71
 	android:name
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:11:22-68
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:12:22-68
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:12:5-80
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:13:5-80
 	android:name
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:12:22-77
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:13:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:13:5-81
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:14:5-81
 	android:name
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:13:22-78
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:14:22-78
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:14:5-75
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:15:5-75
 	android:name
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:14:22-72
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:15:22-72
 uses-permission#android.permission.READ_CONTACTS
-ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:15:5-72
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:16:5-72
 	android:name
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:15:22-69
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:16:22-69
 uses-permission#android.permission.READ_SMS
-ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:16:5-67
-	android:name
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:16:22-64
-uses-permission#android.permission.SEND_SMS
 ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:17:5-67
 	android:name
 		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:17:22-64
-uses-permission#android.permission.FOREGROUND_SERVICE
-ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:18:5-77
+uses-permission#android.permission.SEND_SMS
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:18:5-67
 	android:name
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:18:22-74
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:18:22-64
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:19:5-77
+	android:name
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:19:22-74
+uses-permission#android.permission.USB_PERMISSION
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:22:5-73
+	android:name
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:22:22-70
+uses-permission#android.permission.HARDWARE_TEST
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:23:5-72
+	android:name
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:23:22-69
+uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:26:5-80
+	android:name
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:26:22-77
+uses-permission#android.permission.WAKE_LOCK
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:27:5-68
+	android:name
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:27:22-65
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:28:5-78
+	android:name
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:28:22-75
+uses-feature#android.hardware.usb.accessory
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:31:5-91
+	android:required
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:31:65-88
+	android:name
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:31:19-64
+uses-feature#android.hardware.usb.host
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:32:5-87
+	android:required
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:32:60-84
+	android:name
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:32:19-59
 application
-ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:20:5-61:19
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:34:5-83:19
 MERGED from [com.google.android.material:material:1.8.0] /root/.gradle/caches/transforms-3/1d6008e40b174b18ef5fa9ea4cd35014/transformed/material-1.8.0/AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.8.0] /root/.gradle/caches/transforms-3/1d6008e40b174b18ef5fa9ea4cd35014/transformed/material-1.8.0/AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /root/.gradle/caches/transforms-3/4b929ab10fd806b94f86bd527f89dd0a/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
@@ -146,73 +178,85 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /root/.gradle/caches/transf
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.9.0] /root/.gradle/caches/transforms-3/ec4f76f6c0c02de8ba18086e7bd9baf5/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:25:9-35
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:39:9-35
 	android:label
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:23:9-41
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:37:9-41
 	android:roundIcon
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:24:9-62
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:38:9-62
 	android:icon
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:22:9-57
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:36:9-57
 	android:allowBackup
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:21:9-35
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:35:9-35
 	android:theme
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:26:9-58
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:40:9-58
 activity#com.degoogled.androidauto.MainActivity
-ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:28:9-45:20
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:42:9-67:20
 	android:screenOrientation
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:31:13-50
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:45:13-50
 	android:exported
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:30:13-36
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:44:13-36
 	android:theme
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:32:13-74
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:46:13-74
 	android:name
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:29:13-41
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:43:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:33:13-36:29
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:47:13-50:29
 action#android.intent.action.MAIN
-ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:34:17-69
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:48:17-69
 	android:name
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:34:25-66
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:48:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:35:17-77
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:49:17-77
 	android:name
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:35:27-74
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:49:27-74
 intent-filter#action:name:android.hardware.usb.action.USB_ACCESSORY_ATTACHED
-ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:39:13-41:29
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:53:13-55:29
 action#android.hardware.usb.action.USB_ACCESSORY_ATTACHED
-ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:40:17-93
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:54:17-93
 	android:name
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:40:25-90
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:54:25-90
 meta-data#android.hardware.usb.action.USB_ACCESSORY_ATTACHED
-ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:42:13-44:60
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:56:13-58:60
 	android:resource
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:44:17-57
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:58:17-57
 	android:name
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:43:17-82
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:57:17-82
+intent-filter#action:name:android.hardware.usb.action.USB_DEVICE_ATTACHED
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:61:13-63:29
+action#android.hardware.usb.action.USB_DEVICE_ATTACHED
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:62:17-90
+	android:name
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:62:25-87
+meta-data#android.hardware.usb.action.USB_DEVICE_ATTACHED
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:64:13-66:57
+	android:resource
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:66:17-54
+	android:name
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:65:17-79
 service#com.degoogled.androidauto.service.ProtocolHandlerService
-ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:47:9-50:40
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:69:9-72:40
 	android:enabled
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:49:13-35
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:71:13-35
 	android:exported
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:50:13-37
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:72:13-37
 	android:name
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:48:13-59
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:70:13-59
 service#com.degoogled.androidauto.service.NavigationService
-ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:52:9-55:40
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:74:9-77:40
 	android:enabled
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:54:13-35
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:76:13-35
 	android:exported
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:55:13-37
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:77:13-37
 	android:name
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:53:13-54
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:75:13-54
 service#com.degoogled.androidauto.service.MediaService
-ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:57:9-60:40
+ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:79:9-82:40
 	android:enabled
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:59:13-35
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:81:13-35
 	android:exported
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:60:13-37
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:82:13-37
 	android:name
-		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:58:13-49
+		ADDED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:80:13-49
 uses-sdk
 INJECTED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml
