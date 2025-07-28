@@ -73,37 +73,16 @@ jobs:
     - name: Create CMakeLists.txt for analysis if not exists
       run: |
         if [ ! -f "CMakeLists.txt" ]; then
-          cat > CMakeLists.txt << 'EOF'
-cmake_minimum_required(VERSION 3.10)
-project(DegoogledAndroidAuto VERSION 1.0.0 LANGUAGES CXX)
-
-# Set C++ standard
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
-
-# Find required packages
-find_package(Threads REQUIRED)
-
-# Add include directories
-include_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}/src
-)
-
-# Define source files
-file(GLOB_RECURSE SOURCES
-    "src/protocol_handler/*.cpp"
-)
-
-# Create library
-add_library(degoogled_aa SHARED ${SOURCES})
-
-# Link libraries
-target_link_libraries(degoogled_aa
-    PRIVATE
-    Threads::Threads
-)
-EOF
+          echo "cmake_minimum_required(VERSION 3.10)" > CMakeLists.txt
+          echo "project(DegoogledAndroidAuto VERSION 1.0.0 LANGUAGES CXX)" >> CMakeLists.txt
+          echo "" >> CMakeLists.txt
+          echo "set(CMAKE_CXX_STANDARD 17)" >> CMakeLists.txt
+          echo "set(CMAKE_CXX_STANDARD_REQUIRED ON)" >> CMakeLists.txt
+          echo "find_package(Threads REQUIRED)" >> CMakeLists.txt
+          echo "include_directories(\${CMAKE_CURRENT_SOURCE_DIR}/src)" >> CMakeLists.txt
+          echo "file(GLOB_RECURSE SOURCES \"src/protocol_handler/*.cpp\")" >> CMakeLists.txt
+          echo "add_library(degoogled_aa SHARED \${SOURCES})" >> CMakeLists.txt
+          echo "target_link_libraries(degoogled_aa PRIVATE Threads::Threads)" >> CMakeLists.txt
         fi
 
     - name: Configure CMake for analysis
