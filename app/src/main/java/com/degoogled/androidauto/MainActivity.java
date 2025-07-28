@@ -265,7 +265,7 @@ public class MainActivity extends AppCompatActivity {
         diagnosticInfo.append("=== System Information ===\n");
         diagnosticInfo.append("Device: ").append(android.os.Build.MODEL).append("\n");
         diagnosticInfo.append("Android: ").append(android.os.Build.VERSION.RELEASE).append("\n");
-        diagnosticInfo.append("App Version: 1.0.1\n");
+        diagnosticInfo.append("App Version: 1.2.0\n");
         
         new AlertDialog.Builder(this)
                 .setTitle("Nissan Pathfinder Diagnostics")
