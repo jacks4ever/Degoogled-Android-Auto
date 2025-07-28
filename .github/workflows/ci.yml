@@ -37,7 +37,7 @@ jobs:
         
         # Accept licenses and install components
         yes | sdkmanager --licenses
-        sdkmanager "platform-tools" "platforms;android-33" "build-tools;33.0.0" "ndk;23.1.7779620"
+        sdkmanager "platform-tools" "platforms;android-33" "build-tools;33.0.0" "ndk;25.1.8937393" "cmake;3.22.1"
         
         # Make environment variables available to subsequent steps
         echo "ANDROID_HOME=$HOME/android-sdk" >> $GITHUB_ENV
@@ -67,8 +67,14 @@ jobs:
         # Ensure local.properties has correct SDK path
         echo "sdk.dir=$ANDROID_HOME" > local.properties
         
+        # Create symlink for CMake if needed (GitHub Actions uses different path structure)
+        if [ ! -d "/workspace/android-sdk" ]; then
+          sudo mkdir -p /workspace
+          sudo ln -sf $ANDROID_HOME /workspace/android-sdk
+        fi
+        
         # Build with debug info
-        ./gradlew assembleDebug --stacktrace
+        ./gradlew assembleDebug --stacktrace --info
     
     - name: Run tests (if available)
       run: |
