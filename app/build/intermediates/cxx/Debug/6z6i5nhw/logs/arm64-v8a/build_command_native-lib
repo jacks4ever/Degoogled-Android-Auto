@@ -1,4 +1,4 @@
-/workspace/android-sdk/cmake/3.22.1/bin/ninja \
+/home/runner/android-sdk/cmake/3.22.1/bin/ninja \
   -v \
   -C \
   /workspace/Degoogled-Android-Auto/app/.cxx/Debug/6z6i5nhw/arm64-v8a \

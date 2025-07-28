@@ -51,6 +51,10 @@ public class ProtocolHandler implements UsbDeviceManager.UsbConnectionListener {
     private int currentAuthMethod = AUTH_METHOD_STANDARD;
     private int authAttempts = 0;
     private static final int MAX_AUTH_ATTEMPTS = 3;
+    private static final int CONNECTION_TIMEOUT_MS = 30000; // 30 seconds total timeout
+    private static final int AUTH_TIMEOUT_MS = 10000; // 10 seconds per auth attempt
+    private Runnable connectionTimeoutRunnable;
+    private Runnable authTimeoutRunnable;
     
     public interface ProtocolListener {
         void onConnectionStateChanged(boolean connected, String message);
@@ -82,6 +86,16 @@ public class ProtocolHandler implements UsbDeviceManager.UsbConnectionListener {
         if (state == ConnectionState.DISCONNECTED || state == ConnectionState.ERROR) {
             setState(ConnectionState.CONNECTING);
             LogManager.i(TAG, "Starting connection process");
+            
+            // Set up connection timeout
+            connectionTimeoutRunnable = () -> {
+                if (state != ConnectionState.CONNECTED) {
+                    LogManager.e(TAG, "Connection timeout after " + CONNECTION_TIMEOUT_MS + "ms");
+                    handleConnectionError("Connection timeout - Head unit not responding. Please check USB connection and try again.");
+                }
+            };
+            mainHandler.postDelayed(connectionTimeoutRunnable, CONNECTION_TIMEOUT_MS);
+            
             usbManager.checkForConnectedAccessory();
         } else {
             LogManager.w(TAG, "Cannot connect - already in state: " + state);
@@ -93,6 +107,17 @@ public class ProtocolHandler implements UsbDeviceManager.UsbConnectionListener {
      */
     public void disconnect() {
         LogManager.i(TAG, "Disconnecting from head unit");
+        
+        // Clear any pending timeouts
+        if (connectionTimeoutRunnable != null) {
+            mainHandler.removeCallbacks(connectionTimeoutRunnable);
+            connectionTimeoutRunnable = null;
+        }
+        if (authTimeoutRunnable != null) {
+            mainHandler.removeCallbacks(authTimeoutRunnable);
+            authTimeoutRunnable = null;
+        }
+        
         usbManager.closeAccessory();
         setState(ConnectionState.DISCONNECTED);
     }
@@ -143,11 +168,39 @@ public class ProtocolHandler implements UsbDeviceManager.UsbConnectionListener {
     }
     
     /**
+     * Handle connection errors
+     */
+    private void handleConnectionError(String errorMessage) {
+        LogManager.e(TAG, "Connection error: " + errorMessage);
+        setState(ConnectionState.ERROR);
+        
+        // Clear timeouts
+        if (connectionTimeoutRunnable != null) {
+            mainHandler.removeCallbacks(connectionTimeoutRunnable);
+            connectionTimeoutRunnable = null;
+        }
+        if (authTimeoutRunnable != null) {
+            mainHandler.removeCallbacks(authTimeoutRunnable);
+            authTimeoutRunnable = null;
+        }
+        
+        if (protocolListener != null) {
+            mainHandler.post(() -> protocolListener.onProtocolError(errorMessage));
+        }
+    }
+    
+    /**
      * Start the authentication process
      */
     private void startAuthentication() {
         setState(ConnectionState.AUTHENTICATING);
         authAttempts = 0;
+        
+        // Clear connection timeout since we're now in auth phase
+        if (connectionTimeoutRunnable != null) {
+            mainHandler.removeCallbacks(connectionTimeoutRunnable);
+            connectionTimeoutRunnable = null;
+        }
         
         // Try the standard authentication method first
         currentAuthMethod = AUTH_METHOD_STANDARD;
@@ -159,6 +212,15 @@ public class ProtocolHandler implements UsbDeviceManager.UsbConnectionListener {
      */
     private void sendAuthMessage() {
         LogManager.i(TAG, "Sending authentication message (method: " + currentAuthMethod + ", attempt: " + (authAttempts + 1) + ")");
+        
+        // Set up auth timeout
+        authTimeoutRunnable = () -> {
+            if (state == ConnectionState.AUTHENTICATING) {
+                LogManager.w(TAG, "Authentication timeout for method " + currentAuthMethod);
+                tryNextAuthMethod();
+            }
+        };
+        mainHandler.postDelayed(authTimeoutRunnable, AUTH_TIMEOUT_MS);
         
         ByteBuffer buffer = ByteBuffer.allocate(16);
         buffer.order(ByteOrder.LITTLE_ENDIAN);
@@ -200,16 +262,24 @@ public class ProtocolHandler implements UsbDeviceManager.UsbConnectionListener {
      * Try the next authentication method if available
      */
     private void tryNextAuthMethod() {
+        // Clear current auth timeout
+        if (authTimeoutRunnable != null) {
+            mainHandler.removeCallbacks(authTimeoutRunnable);
+            authTimeoutRunnable = null;
+        }
+        
         if (authAttempts >= MAX_AUTH_ATTEMPTS) {
             // We've tried the current method enough times, switch to the next one
             switch (currentAuthMethod) {
                 case AUTH_METHOD_STANDARD:
+                    LogManager.i(TAG, "Switching to Nissan authentication method");
                     currentAuthMethod = AUTH_METHOD_NISSAN;
                     authAttempts = 0;
                     sendAuthMessage();
                     break;
                     
                 case AUTH_METHOD_NISSAN:
+                    LogManager.i(TAG, "Switching to generic authentication method");
                     currentAuthMethod = AUTH_METHOD_GENERIC;
                     authAttempts = 0;
                     sendAuthMessage();
@@ -218,14 +288,12 @@ public class ProtocolHandler implements UsbDeviceManager.UsbConnectionListener {
                 case AUTH_METHOD_GENERIC:
                     // We've tried all methods
                     LogManager.e(TAG, "Authentication failed after trying all methods");
-                    setState(ConnectionState.ERROR);
-                    if (protocolListener != null) {
-                        mainHandler.post(() -> protocolListener.onProtocolError("Authentication failed"));
-                    }
+                    handleConnectionError("Authentication failed - Head unit rejected all authentication methods. Please check compatibility and try reconnecting.");
                     break;
             }
         } else {
             // Try the current method again
+            LogManager.i(TAG, "Retrying authentication method " + currentAuthMethod + " (attempt " + (authAttempts + 1) + ")");
             sendAuthMessage();
         }
     }
@@ -306,6 +374,13 @@ public class ProtocolHandler implements UsbDeviceManager.UsbConnectionListener {
         switch (authStatus) {
             case 0x00:  // Success
                 LogManager.i(TAG, "Authentication successful (method: " + currentAuthMethod + ")");
+                
+                // Clear auth timeout since we succeeded
+                if (authTimeoutRunnable != null) {
+                    mainHandler.removeCallbacks(authTimeoutRunnable);
+                    authTimeoutRunnable = null;
+                }
+                
                 setState(ConnectionState.CONNECTED);
                 break;
                 

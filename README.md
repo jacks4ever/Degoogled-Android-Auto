@@ -56,6 +56,13 @@ The actual Android Auto interface appears on your Nissan Pathfinder's display:
 - **Advanced message handling** - Support for all Android Auto message types including media, navigation, and control messages
 - **Better error recovery** - Robust connection management with automatic retry mechanisms
 
+### ⏱️ Enhanced Timeout Handling (v1.2.0 Update)
+- **Extended USB timeouts** - Increased from 5 to 15 seconds for better Android Auto handshake compatibility
+- **Intelligent connection management** - 30-second total connection timeout with 10-second per-authentication-method timeouts
+- **User-friendly error dialogs** - Clear timeout messages with specific troubleshooting tips
+- **Real-time error notifications** - Broadcast system for immediate user feedback on connection issues
+- **Automatic retry mechanisms** - Multiple authentication methods with fallback options
+
 ### 🧪 Testing & Development
 - **Comprehensive test suite** - Built-in TestActivity for validating all protocol features
 - **Enhanced logging** - Detailed connection and protocol logging for troubleshooting

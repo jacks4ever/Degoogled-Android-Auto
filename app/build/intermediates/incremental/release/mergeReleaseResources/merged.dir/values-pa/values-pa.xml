@@ -36,9 +36,17 @@
     <string name="bottomsheet_action_expand_halfway">ਅੱਧ ਤੱਕ ਵਿਸਤਾਰ ਕਰੋ</string>
     <string name="bottomsheet_drag_handle_clicked">ਘਸੀਟਣ ਵਾਲੇ ਹੈਂਡਲ \'ਤੇ ਡਬਲ-ਟੈਪ ਕੀਤਾ ਗਿਆ</string>
     <string name="bottomsheet_drag_handle_content_description">ਘਸੀਟਣ ਵਾਲਾ ਹੈਂਡਲ</string>
+    <string msgid="881409763997275156" name="call_notification_answer_action">"ਜਵਾਬ ਦਿਓ"</string>
+    <string msgid="8793775615905189152" name="call_notification_answer_video_action">"ਵੀਡੀਓ"</string>
+    <string msgid="3229508546291798546" name="call_notification_decline_action">"ਅਸਵੀਕਾਰ ਕਰੋ"</string>
+    <string msgid="2659457946726154263" name="call_notification_hang_up_action">"ਸਮਾਪਤ ਕਰੋ"</string>
+    <string msgid="6107532579223922871" name="call_notification_incoming_text">"ਇਨਕਮਿੰਗ ਕਾਲ"</string>
+    <string msgid="8623827134497363134" name="call_notification_ongoing_text">"ਜਾਰੀ ਕਾਲ"</string>
+    <string msgid="59049573811482460" name="call_notification_screening_text">"ਇਨਕਮਿੰਗ ਕਾਲ ਦੀ ਸਕ੍ਰੀਨਿੰਗ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ"</string>
     <string name="character_counter_content_description">%2$d ਵਿੱਚੋਂ %1$d ਅੱਖਰ-ਚਿੰਨ੍ਹ ਦਾਖਲ ਕੀਤੇ ਗਏ</string>
     <string name="character_counter_overflowed_content_description">ਅੱਖਰ-ਚਿੰਨ੍ਹ ਸੀਮਾ %2$d ਤੋਂ %1$d ਵਧੀ</string>
     <string name="clear_text_end_icon_content_description">ਲਿਖਤ ਕਲੀਅਰ ਕਰੋ</string>
+    <string msgid="7213672915724563695" name="default_notification_channel_name">"ਹੁਣੇ ਚੱਲ ਰਿਹਾ ਹੈ"</string>
     <string name="error_icon_content_description">ਗੜਬੜ</string>
     <string name="exposed_dropdown_menu_content_description">ਡ੍ਰੌਪ-ਡਾਊਨ ਮੀਨੂ ਦਿਖਾਓ</string>
     <string name="icon_content_description">ਵਿੰਡੋ ਦਾ ਪ੍ਰਤੀਕ</string>
@@ -93,6 +101,10 @@
     <string name="mtrl_timepicker_cancel">ਰੱਦ ਕਰੋ</string>
     <string name="mtrl_timepicker_confirm">ਠੀਕ ਹੈ</string>
     <string name="password_toggle_content_description">ਪਾਸਵਰਡ ਦਿਖਾਓ</string>
+    <string msgid="3510124037191104584" name="pause_button_content_description">"ਰੋਕੋ"</string>
+    <string msgid="963503759453979404" name="play_button_content_description">"ਚਲਾਓ"</string>
     <string msgid="6264217191555673260" name="search_menu_title">"ਖੋਜ"</string>
+    <string msgid="6034072145387511457" name="skip_to_next_item_button_content_description">"ਅਗਲੀ ਆਈਟਮ \'ਤੇ ਜਾਓ"</string>
+    <string msgid="4352480799561670760" name="skip_to_previous_item_button_content_description">"ਪਿਛਲੀ ਆਈਟਮ \'ਤੇ ਜਾਓ"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
 </resources>

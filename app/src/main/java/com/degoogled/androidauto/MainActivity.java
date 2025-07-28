@@ -6,9 +6,11 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
 import android.hardware.usb.UsbManager;
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     // Core components
     private NissanDisplayAdapter displayAdapter;
     private ConnectionLogger logger;
+    private BroadcastReceiver errorReceiver;
     private ProtocolHandlerService protocolService;
     private boolean serviceBound = false;
     
@@ -83,6 +86,9 @@ public class MainActivity extends AppCompatActivity {
         displayAdapter = new NissanDisplayAdapter(this);
         logger.logInfo("Nissan Pathfinder display adapter initialized: " + 
                 displayAdapter.getDisplayProfile().toString());
+        
+        // Initialize error broadcast receiver
+        initializeErrorReceiver();
         
         // Initialize UI components
         initializeUI();
@@ -410,6 +416,51 @@ public class MainActivity extends AppCompatActivity {
     }
     
     /**
+     * Initialize error broadcast receiver
+     */
+    private void initializeErrorReceiver() {
+        errorReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                if ("com.degoogled.androidauto.PROTOCOL_ERROR".equals(intent.getAction())) {
+                    String errorMessage = intent.getStringExtra("error_message");
+                    if (errorMessage != null) {
+                        showTimeoutErrorDialog(errorMessage);
+                    }
+                }
+            }
+        };
+        
+        IntentFilter filter = new IntentFilter("com.degoogled.androidauto.PROTOCOL_ERROR");
+        registerReceiver(errorReceiver, filter);
+    }
+    
+    /**
+     * Show timeout error dialog to user
+     */
+    private void showTimeoutErrorDialog(String errorMessage) {
+        runOnUiThread(() -> {
+            updateConnectionStatus("Connection failed", "#f44336");
+            
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Connection Timeout")
+                   .setMessage(errorMessage + "\n\nTroubleshooting tips:\n" +
+                              "• Check USB cable connection\n" +
+                              "• Try a different USB cable\n" +
+                              "• Restart your head unit\n" +
+                              "• Enable Developer Options on phone")
+                   .setPositiveButton("Retry", (dialog, which) -> {
+                       updateConnectionStatus("Retrying connection...", "#ffa500");
+                       startProtocolHandlerService();
+                   })
+                   .setNegativeButton("Cancel", null)
+                   .show();
+            
+            logger.logError("Timeout error shown to user: " + errorMessage);
+        });
+    }
+    
+    /**
      * Called when permissions are ready (either all granted or handled)
      */
     private void onPermissionsReady() {
@@ -549,6 +600,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         logger.logInfo("MainActivity destroyed");
+        
+        // Unregister broadcast receiver
+        if (errorReceiver != null) {
+            try {
+                unregisterReceiver(errorReceiver);
+            } catch (IllegalArgumentException e) {
+                // Receiver was not registered, ignore
+            }
+        }
+        
         // Logger will be closed by the service
     }
 }

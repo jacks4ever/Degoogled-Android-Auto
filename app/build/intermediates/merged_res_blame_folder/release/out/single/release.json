@@ -1,62 +1,66 @@
 [
     {
-        "merged": "com.degoogled.androidauto.app-merged_res-34:/menu_main_menu.xml.flat",
-        "source": "com.degoogled.androidauto.app-main-35:/menu/main_menu.xml"
+        "merged": "com.degoogled.androidauto.app-merged_res-38:/xml_accessory_filter.xml.flat",
+        "source": "com.degoogled.androidauto.app-main-39:/xml/accessory_filter.xml"
     },
     {
-        "merged": "com.degoogled.androidauto.app-merged_res-34:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "com.degoogled.androidauto.app-main-35:/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "com.degoogled.androidauto.app-merged_res-38:/menu_main_menu.xml.flat",
+        "source": "com.degoogled.androidauto.app-main-39:/menu/main_menu.xml"
     },
     {
-        "merged": "com.degoogled.androidauto.app-merged_res-34:/xml_accessory_filter.xml.flat",
-        "source": "com.degoogled.androidauto.app-main-35:/xml/accessory_filter.xml"
+        "merged": "com.degoogled.androidauto.app-merged_res-38:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.degoogled.androidauto.app-main-39:/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.degoogled.androidauto.app-merged_res-34:/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "com.degoogled.androidauto.app-main-35:/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "com.degoogled.androidauto.app-merged_res-38:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.degoogled.androidauto.app-main-39:/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.degoogled.androidauto.app-merged_res-34:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.degoogled.androidauto.app-main-35:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "com.degoogled.androidauto.app-merged_res-38:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.degoogled.androidauto.app-main-39:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.degoogled.androidauto.app-merged_res-34:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.degoogled.androidauto.app-main-35:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "com.degoogled.androidauto.app-merged_res-38:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.degoogled.androidauto.app-main-39:/mipmap-mdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.degoogled.androidauto.app-merged_res-34:/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "com.degoogled.androidauto.app-main-35:/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "com.degoogled.androidauto.app-merged_res-38:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.degoogled.androidauto.app-main-39:/mipmap-hdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.degoogled.androidauto.app-merged_res-34:/menu_bottom_navigation_menu.xml.flat",
-        "source": "com.degoogled.androidauto.app-main-35:/menu/bottom_navigation_menu.xml"
+        "merged": "com.degoogled.androidauto.app-merged_res-38:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.degoogled.androidauto.app-main-39:/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.degoogled.androidauto.app-merged_res-34:/xml_device_filter.xml.flat",
-        "source": "com.degoogled.androidauto.app-main-35:/xml/device_filter.xml"
+        "merged": "com.degoogled.androidauto.app-merged_res-38:/layout_activity_test.xml.flat",
+        "source": "com.degoogled.androidauto.app-main-39:/layout/activity_test.xml"
     },
     {
-        "merged": "com.degoogled.androidauto.app-merged_res-34:/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "com.degoogled.androidauto.app-main-35:/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "com.degoogled.androidauto.app-merged_res-38:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.degoogled.androidauto.app-main-39:/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "com.degoogled.androidauto.app-merged_res-34:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.degoogled.androidauto.app-main-35:/mipmap-hdpi/ic_launcher.png"
+        "merged": "com.degoogled.androidauto.app-merged_res-38:/xml_device_filter.xml.flat",
+        "source": "com.degoogled.androidauto.app-main-39:/xml/device_filter.xml"
     },
     {
-        "merged": "com.degoogled.androidauto.app-merged_res-34:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "com.degoogled.androidauto.app-main-35:/mipmap-mdpi/ic_launcher_round.png"
+        "merged": "com.degoogled.androidauto.app-merged_res-38:/layout_activity_main.xml.flat",
+        "source": "com.degoogled.androidauto.app-main-39:/layout/activity_main.xml"
     },
     {
-        "merged": "com.degoogled.androidauto.app-merged_res-34:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.degoogled.androidauto.app-main-35:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "com.degoogled.androidauto.app-merged_res-38:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.degoogled.androidauto.app-main-39:/mipmap-xhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.degoogled.androidauto.app-merged_res-34:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.degoogled.androidauto.app-main-35:/mipmap-mdpi/ic_launcher.png"
+        "merged": "com.degoogled.androidauto.app-merged_res-38:/menu_bottom_navigation_menu.xml.flat",
+        "source": "com.degoogled.androidauto.app-main-39:/menu/bottom_navigation_menu.xml"
     },
     {
-        "merged": "com.degoogled.androidauto.app-merged_res-34:/layout_activity_main.xml.flat",
-        "source": "com.degoogled.androidauto.app-main-35:/layout/activity_main.xml"
+        "merged": "com.degoogled.androidauto.app-merged_res-38:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.degoogled.androidauto.app-main-39:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.degoogled.androidauto.app-merged_res-38:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.degoogled.androidauto.app-main-39:/mipmap-hdpi/ic_launcher.png"
     }
 ]

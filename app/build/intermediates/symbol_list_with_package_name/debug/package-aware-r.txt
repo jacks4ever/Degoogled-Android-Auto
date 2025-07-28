@@ -1314,6 +1314,8 @@ color bright_foreground_material_dark
 color bright_foreground_material_light
 color button_material_dark
 color button_material_light
+color call_notification_answer_color
+color call_notification_decline_color
 color cardview_dark_background
 color cardview_light_background
 color cardview_shadow_end_color
@@ -2723,6 +2725,12 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable ic_arrow_back_black_24
+drawable ic_call_answer
+drawable ic_call_answer_low
+drawable ic_call_answer_video
+drawable ic_call_answer_video_low
+drawable ic_call_decline
+drawable ic_call_decline_low
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
@@ -2761,6 +2769,11 @@ drawable material_ic_keyboard_arrow_previous_black_24dp
 drawable material_ic_keyboard_arrow_right_black_24dp
 drawable material_ic_menu_arrow_down_black_24dp
 drawable material_ic_menu_arrow_up_black_24dp
+drawable media_session_service_notification_ic_music_note
+drawable media_session_service_notification_ic_pause
+drawable media_session_service_notification_ic_play
+drawable media_session_service_notification_ic_skip_to_next
+drawable media_session_service_notification_ic_skip_to_previous
 drawable moreinfo_arrow
 drawable moreinfo_arrow_pressed
 drawable mtrl_bottomsheet_drag_handle
@@ -2906,6 +2919,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addressInput
 id alertTitle
 id aligned
 id all
@@ -2915,7 +2929,6 @@ id animateToEnd
 id animateToStart
 id antiClockwise
 id anticipate
-id appContainer
 id arc
 id asConfigured
 id async
@@ -2930,11 +2943,12 @@ id beginning
 id bestChoice
 id blocking
 id bottom
-id bottomNavigation
 id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btnDiagnostics
+id btnSettings
 id bubble_description
 id bubble_image
 id bubble_moreinfo
@@ -2966,6 +2980,8 @@ id closest
 id collapseActionView
 id compress
 id confirm_button
+id connectButton
+id connectionStatus
 id constraint
 id container
 id content
@@ -2992,6 +3008,7 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id deviceInfo
 id dialog_button
 id dimensions
 id direct
@@ -2999,6 +3016,7 @@ id disableHome
 id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
+id disconnectButton
 id disjoint
 id dragAnticlockwise
 id dragClockwise
@@ -3024,6 +3042,7 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id exportLogsButton
 id fade
 id fill
 id fill_horizontal
@@ -3108,6 +3127,7 @@ id material_timepicker_view
 id material_value_index
 id matrix
 id media
+id mediaPathInput
 id media_actions
 id media_controller_compat_view_tag
 id message
@@ -3145,6 +3165,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id navButton
 id navigation
 id navigation_bar_item_active_indicator_view
 id navigation_bar_item_icon_container
@@ -3156,6 +3177,7 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id nextButton
 id noScroll
 id noState
 id none
@@ -3179,13 +3201,18 @@ id parent_matrix
 id password_toggle
 id path
 id pathRelative
+id pauseButton
 id peekHeight
 id percent
+id permissionCard
+id permissionStatus
 id phone
 id pin
+id playButton
 id position
 id postLayout
 id pressed
+id prevButton
 id progress_circular
 id progress_horizontal
 id radio
@@ -3269,8 +3296,11 @@ id startToEnd
 id startVertical
 id staticLayout
 id staticPostLayout
+id statusText
 id status_bar_latest_event_content
 id stop
+id stopButton
+id stopNavButton
 id stretch
 id submenuarrow
 id submit_area
@@ -3451,6 +3481,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout activity_test
 layout bonuspack_bubble
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -3594,6 +3625,13 @@ string cacheManagerHandlingMessage
 string cacheManagerNo
 string cacheManagerUnsupportedSource
 string cacheManagerYes
+string call_notification_answer_action
+string call_notification_answer_video_action
+string call_notification_decline_action
+string call_notification_hang_up_action
+string call_notification_incoming_text
+string call_notification_ongoing_text
+string call_notification_screening_text
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
@@ -3603,6 +3641,7 @@ string connect_to_car
 string connected
 string connecting
 string cyclemap
+string default_notification_channel_name
 string disconnect
 string disconnected
 string error_a11y_label
@@ -3737,7 +3776,9 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string pause_button_content_description
 string phone
+string play_button_content_description
 string public_transport
 string roads_nl
 string samples
@@ -3752,6 +3793,8 @@ string set_mode_show_me
 string settings
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
+string skip_to_next_item_button_content_description
+string skip_to_previous_item_button_content_description
 string snapshot
 string states
 string status_bar_notification_info_overflow

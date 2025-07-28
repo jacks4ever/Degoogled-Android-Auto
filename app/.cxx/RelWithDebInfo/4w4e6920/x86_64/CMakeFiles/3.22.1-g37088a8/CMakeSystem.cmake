@@ -1,16 +1,16 @@
-set(CMAKE_HOST_SYSTEM "Linux-5.15.0-1079-gke")
+set(CMAKE_HOST_SYSTEM "Linux-5.15.0-1078-gke")
 set(CMAKE_HOST_SYSTEM_NAME "Linux")
-set(CMAKE_HOST_SYSTEM_VERSION "5.15.0-1079-gke")
+set(CMAKE_HOST_SYSTEM_VERSION "5.15.0-1078-gke")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64")
 
-include("/workspace/android-sdk/ndk/23.1.7779620/build/cmake/android.toolchain.cmake")
+include("/home/runner/android-sdk/ndk/23.1.7779620/build/cmake/android.toolchain.cmake")
 
 set(CMAKE_SYSTEM "Android-24")
 set(CMAKE_SYSTEM_NAME "Android")
 set(CMAKE_SYSTEM_VERSION "24")
 set(CMAKE_SYSTEM_PROCESSOR "x86_64")
 
-set(CMAKE_ANDROID_NDK "/workspace/android-sdk/ndk/23.1.7779620")
+set(CMAKE_ANDROID_NDK "/home/runner/android-sdk/ndk/23.1.7779620")
 set(CMAKE_ANDROID_STANDALONE_TOOLCHAIN "")
 set(CMAKE_ANDROID_ARCH "x86_64")
 set(CMAKE_ANDROID_ARCH_ABI "x86_64")
@@ -19,7 +19,7 @@ set(CMAKE_ANDROID_ARCH_LLVM_TRIPLE "x86_64-none-linux-android")
 set(CMAKE_ANDROID_NDK_VERSION "23.1")
 set(CMAKE_ANDROID_NDK_DEPRECATED_HEADERS "1")
 set(CMAKE_ANDROID_NDK_TOOLCHAIN_HOST_TAG "linux-x86_64")
-set(CMAKE_ANDROID_NDK_TOOLCHAIN_UNIFIED "/workspace/android-sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64")
+set(CMAKE_ANDROID_NDK_TOOLCHAIN_UNIFIED "/home/runner/android-sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64")
 
 # Copyright (C) 2020 The Android Open Source Project
 #

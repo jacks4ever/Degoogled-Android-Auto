@@ -36,9 +36,17 @@
     <string name="bottomsheet_action_expand_halfway">பாதியளவு விரிவாக்கும்</string>
     <string name="bottomsheet_drag_handle_clicked">இழுப்பதற்கான ஹேண்டில் இருமுறை தட்டப்பட்டது</string>
     <string name="bottomsheet_drag_handle_content_description">இழுப்பதற்கான ஹேண்டில்</string>
+    <string msgid="881409763997275156" name="call_notification_answer_action">"பதிலளி"</string>
+    <string msgid="8793775615905189152" name="call_notification_answer_video_action">"வீடியோ"</string>
+    <string msgid="3229508546291798546" name="call_notification_decline_action">"நிராகரி"</string>
+    <string msgid="2659457946726154263" name="call_notification_hang_up_action">"துண்டி"</string>
+    <string msgid="6107532579223922871" name="call_notification_incoming_text">"உள்வரும் அழைப்பு"</string>
+    <string msgid="8623827134497363134" name="call_notification_ongoing_text">"செயலில் இருக்கும் அழைப்பு"</string>
+    <string msgid="59049573811482460" name="call_notification_screening_text">"உள்வரும் அழைப்பை மதிப்பாய்வு செய்கிறது"</string>
     <string name="character_counter_content_description">%2$d இல் %1$d எழுத்துகள் உள்ளிடப்பட்டுள்ளன</string>
     <string name="character_counter_overflowed_content_description">%2$d இல் %1$d எழுத்து வரம்பு மீறப்பட்டது</string>
     <string name="clear_text_end_icon_content_description">உரையை அழிக்கும்</string>
+    <string msgid="7213672915724563695" name="default_notification_channel_name">"இப்போது பிளே செய்வது"</string>
     <string name="error_icon_content_description">பிழை</string>
     <string name="exposed_dropdown_menu_content_description">கீழ் தோன்றல் மெனுவைக் காட்டும் பட்டன்</string>
     <string name="icon_content_description">உரையாடல் ஐகான்</string>
@@ -93,6 +101,10 @@
     <string name="mtrl_timepicker_cancel">ரத்துசெய்</string>
     <string name="mtrl_timepicker_confirm">சரி</string>
     <string name="password_toggle_content_description">கடவுச்சொல்லைக் காட்டு</string>
+    <string msgid="3510124037191104584" name="pause_button_content_description">"இடைநிறுத்தும்"</string>
+    <string msgid="963503759453979404" name="play_button_content_description">"பிளே செய்யும்"</string>
     <string msgid="6264217191555673260" name="search_menu_title">"தேடல்"</string>
+    <string msgid="6034072145387511457" name="skip_to_next_item_button_content_description">"அடுத்ததற்குச் செல்லும்"</string>
+    <string msgid="4352480799561670760" name="skip_to_previous_item_button_content_description">"முந்தையதற்குச் செல்லும்"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
 </resources>

@@ -229,6 +229,11 @@ public class ProtocolHandlerService extends Service implements ProtocolHandler.P
         LogManager.e(TAG, "Protocol error: " + error);
         updateNotification("Error: " + error);
         
+        // Send broadcast to notify MainActivity about the error
+        Intent errorIntent = new Intent("com.degoogled.androidauto.PROTOCOL_ERROR");
+        errorIntent.putExtra("error_message", error);
+        sendBroadcast(errorIntent);
+        
         if (stateListener != null) {
             stateListener.onError(error);
         }

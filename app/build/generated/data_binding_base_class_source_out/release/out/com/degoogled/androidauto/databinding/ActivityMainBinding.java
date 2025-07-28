@@ -4,14 +4,15 @@ package com.degoogled.androidauto.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.Button;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.degoogled.androidauto.R;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -21,16 +22,33 @@ public final class ActivityMainBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final LinearLayout appContainer;
+  public final Button btnDiagnostics;
 
   @NonNull
-  public final BottomNavigationView bottomNavigation;
+  public final Button btnSettings;
 
-  private ActivityMainBinding(@NonNull ConstraintLayout rootView,
-      @NonNull LinearLayout appContainer, @NonNull BottomNavigationView bottomNavigation) {
+  @NonNull
+  public final TextView connectionStatus;
+
+  @NonNull
+  public final TextView deviceInfo;
+
+  @NonNull
+  public final CardView permissionCard;
+
+  @NonNull
+  public final TextView permissionStatus;
+
+  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnDiagnostics,
+      @NonNull Button btnSettings, @NonNull TextView connectionStatus, @NonNull TextView deviceInfo,
+      @NonNull CardView permissionCard, @NonNull TextView permissionStatus) {
     this.rootView = rootView;
-    this.appContainer = appContainer;
-    this.bottomNavigation = bottomNavigation;
+    this.btnDiagnostics = btnDiagnostics;
+    this.btnSettings = btnSettings;
+    this.connectionStatus = connectionStatus;
+    this.deviceInfo = deviceInfo;
+    this.permissionCard = permissionCard;
+    this.permissionStatus = permissionStatus;
   }
 
   @Override
@@ -60,19 +78,44 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.appContainer;
-      LinearLayout appContainer = ViewBindings.findChildViewById(rootView, id);
-      if (appContainer == null) {
+      id = R.id.btnDiagnostics;
+      Button btnDiagnostics = ViewBindings.findChildViewById(rootView, id);
+      if (btnDiagnostics == null) {
         break missingId;
       }
 
-      id = R.id.bottomNavigation;
-      BottomNavigationView bottomNavigation = ViewBindings.findChildViewById(rootView, id);
-      if (bottomNavigation == null) {
+      id = R.id.btnSettings;
+      Button btnSettings = ViewBindings.findChildViewById(rootView, id);
+      if (btnSettings == null) {
         break missingId;
       }
 
-      return new ActivityMainBinding((ConstraintLayout) rootView, appContainer, bottomNavigation);
+      id = R.id.connectionStatus;
+      TextView connectionStatus = ViewBindings.findChildViewById(rootView, id);
+      if (connectionStatus == null) {
+        break missingId;
+      }
+
+      id = R.id.deviceInfo;
+      TextView deviceInfo = ViewBindings.findChildViewById(rootView, id);
+      if (deviceInfo == null) {
+        break missingId;
+      }
+
+      id = R.id.permissionCard;
+      CardView permissionCard = ViewBindings.findChildViewById(rootView, id);
+      if (permissionCard == null) {
+        break missingId;
+      }
+
+      id = R.id.permissionStatus;
+      TextView permissionStatus = ViewBindings.findChildViewById(rootView, id);
+      if (permissionStatus == null) {
+        break missingId;
+      }
+
+      return new ActivityMainBinding((ConstraintLayout) rootView, btnDiagnostics, btnSettings,
+          connectionStatus, deviceInfo, permissionCard, permissionStatus);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

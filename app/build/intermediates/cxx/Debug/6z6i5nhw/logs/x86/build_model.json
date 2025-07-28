@@ -45,7 +45,7 @@
       "moduleBuildFile": "/workspace/Degoogled-Android-Auto/app/build.gradle",
       "makeFile": "/workspace/Degoogled-Android-Auto/app/src/main/cpp/CMakeLists.txt",
       "buildSystem": "CMAKE",
-      "ndkFolder": "/workspace/android-sdk/ndk/23.1.7779620",
+      "ndkFolder": "/home/runner/android-sdk/ndk/23.1.7779620",
       "ndkVersion": "23.1.7779620",
       "ndkSupportedAbiList": [
         "ARMEABI_V7A",
@@ -109,18 +109,18 @@
           "default": true
         }
       ],
-      "cmakeToolchainFile": "/workspace/android-sdk/ndk/23.1.7779620/build/cmake/android.toolchain.cmake",
+      "cmakeToolchainFile": "/home/runner/android-sdk/ndk/23.1.7779620/build/cmake/android.toolchain.cmake",
       "cmake": {
         "isValidCmakeAvailable": true,
-        "cmakeExe": "/workspace/android-sdk/cmake/3.22.1/bin/cmake",
+        "cmakeExe": "/home/runner/android-sdk/cmake/3.22.1/bin/cmake",
         "minimumCmakeVersion": "3.22.1"
       },
       "stlSharedObjectMap": {
         "LIBCXX_SHARED": {
-          "ARMEABI_V7A": "/workspace/android-sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi/libc++_shared.so",
-          "ARM64_V8A": "/workspace/android-sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++_shared.so",
-          "X86": "/workspace/android-sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/i686-linux-android/libc++_shared.so",
-          "X86_64": "/workspace/android-sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/libc++_shared.so"
+          "ARMEABI_V7A": "/home/runner/android-sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi/libc++_shared.so",
+          "ARM64_V8A": "/home/runner/android-sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++_shared.so",
+          "X86": "/home/runner/android-sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/i686-linux-android/libc++_shared.so",
+          "X86_64": "/home/runner/android-sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/libc++_shared.so"
         },
         "LIBCXX_STATIC": {},
         "NONE": {},
@@ -128,13 +128,13 @@
       },
       "project": {
         "rootBuildGradleFolder": "/workspace/Degoogled-Android-Auto",
-        "sdkFolder": "/workspace/android-sdk",
+        "sdkFolder": "/home/runner/android-sdk",
         "isBuildOnlyTargetAbiEnabled": true,
         "isCmakeBuildCohabitationEnabled": false,
         "isPrefabEnabled": false
       },
       "outputOptions": [],
-      "ninjaExe": "/workspace/android-sdk/cmake/3.22.1/bin/ninja"
+      "ninjaExe": "/home/runner/android-sdk/cmake/3.22.1/bin/ninja"
     },
     "prefabClassPaths": [],
     "prefabPackages": [],
@@ -158,10 +158,10 @@
     "-DANDROID_PLATFORM\u003dandroid-24",
     "-DANDROID_ABI\u003dx86",
     "-DCMAKE_ANDROID_ARCH_ABI\u003dx86",
-    "-DANDROID_NDK\u003d/workspace/android-sdk/ndk/23.1.7779620",
-    "-DCMAKE_ANDROID_NDK\u003d/workspace/android-sdk/ndk/23.1.7779620",
-    "-DCMAKE_TOOLCHAIN_FILE\u003d/workspace/android-sdk/ndk/23.1.7779620/build/cmake/android.toolchain.cmake",
-    "-DCMAKE_MAKE_PROGRAM\u003d/workspace/android-sdk/cmake/3.22.1/bin/ninja",
+    "-DANDROID_NDK\u003d/home/runner/android-sdk/ndk/23.1.7779620",
+    "-DCMAKE_ANDROID_NDK\u003d/home/runner/android-sdk/ndk/23.1.7779620",
+    "-DCMAKE_TOOLCHAIN_FILE\u003d/home/runner/android-sdk/ndk/23.1.7779620/build/cmake/android.toolchain.cmake",
+    "-DCMAKE_MAKE_PROGRAM\u003d/home/runner/android-sdk/cmake/3.22.1/bin/ninja",
     "-DCMAKE_CXX_FLAGS\u003d-std\u003dc++17",
     "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/workspace/Degoogled-Android-Auto/app/build/intermediates/cxx/Debug/6z6i5nhw/obj/x86",
     "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003d/workspace/Degoogled-Android-Auto/app/build/intermediates/cxx/Debug/6z6i5nhw/obj/x86",
@@ -171,6 +171,6 @@
     "-DANDROID_STL\u003dc++_shared",
     "-DCMAKE_VERBOSE_MAKEFILE\u003dON"
   ],
-  "stlLibraryFile": "/workspace/android-sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/i686-linux-android/libc++_shared.so",
+  "stlLibraryFile": "/home/runner/android-sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/i686-linux-android/libc++_shared.so",
   "intermediatesParentFolder": "/workspace/Degoogled-Android-Auto/app/build/intermediates/cxx/Debug/6z6i5nhw"
 }

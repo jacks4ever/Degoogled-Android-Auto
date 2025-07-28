@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.degoogled.androidauto.app-mergeReleaseResources-32:/values-v31/values-v31.xml",
+            "outputFile": "com.degoogled.androidauto.app-mergeReleaseResources-36:/values-v31/values-v31.xml",
             "map": [
                 {
                     "source": "/root/.gradle/caches/transforms-3/1d6008e40b174b18ef5fa9ea4cd35014/transformed/material-1.8.0/res/values-v31/values-v31.xml",

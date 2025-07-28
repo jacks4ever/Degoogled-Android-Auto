@@ -1,12 +1,12 @@
 [
 {
   "directory": "/workspace/Degoogled-Android-Auto/app/.cxx/Debug/6z6i5nhw/x86_64",
-  "command": "/workspace/android-sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android24 --sysroot=/workspace/android-sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dnative_lib_EXPORTS -I/workspace/Degoogled-Android-Auto/app/src/main/cpp/../../../../src -std=c++17 -g  -fno-limit-debug-info -fPIC -std=gnu++17 -o CMakeFiles/native-lib.dir/native-lib.cpp.o -c /workspace/Degoogled-Android-Auto/app/src/main/cpp/native-lib.cpp",
+  "command": "/home/runner/android-sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android24 --sysroot=/home/runner/android-sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dnative_lib_EXPORTS -I/workspace/Degoogled-Android-Auto/app/src/main/cpp/../../../../src -std=c++17 -g  -fno-limit-debug-info -fPIC -std=gnu++17 -o CMakeFiles/native-lib.dir/native-lib.cpp.o -c /workspace/Degoogled-Android-Auto/app/src/main/cpp/native-lib.cpp",
   "file": "/workspace/Degoogled-Android-Auto/app/src/main/cpp/native-lib.cpp"
 },
 {
   "directory": "/workspace/Degoogled-Android-Auto/app/.cxx/Debug/6z6i5nhw/x86_64",
-  "command": "/workspace/android-sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android24 --sysroot=/workspace/android-sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dnative_lib_EXPORTS -I/workspace/Degoogled-Android-Auto/app/src/main/cpp/../../../../src -std=c++17 -g  -fno-limit-debug-info -fPIC -std=gnu++17 -o CMakeFiles/native-lib.dir/workspace/Degoogled-Android-Auto/src/protocol_handler/app/K9MailMessagingApp.cpp.o -c /workspace/Degoogled-Android-Auto/src/protocol_handler/app/K9MailMessagingApp.cpp",
+  "command": "/home/runner/android-sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android24 --sysroot=/home/runner/android-sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dnative_lib_EXPORTS -I/workspace/Degoogled-Android-Auto/app/src/main/cpp/../../../../src -std=c++17 -g  -fno-limit-debug-info -fPIC -std=gnu++17 -o CMakeFiles/native-lib.dir/workspace/Degoogled-Android-Auto/src/protocol_handler/app/K9MailMessagingApp.cpp.o -c /workspace/Degoogled-Android-Auto/src/protocol_handler/app/K9MailMessagingApp.cpp",
   "file": "/workspace/Degoogled-Android-Auto/src/protocol_handler/app/K9MailMessagingApp.cpp"
 }
 ]

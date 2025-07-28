@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.degoogled.androidauto.app-mergeReleaseResources-32:/values-v16/values-v16.xml",
+            "outputFile": "com.degoogled.androidauto.app-mergeReleaseResources-36:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/root/.gradle/caches/transforms-3/ec4f76f6c0c02de8ba18086e7bd9baf5/transformed/core-1.9.0/res/values-v16/values-v16.xml",
+                    "source": "/root/.gradle/caches/transforms-3/5f7b5bea59f6a91aeb825e2030712c0f/transformed/core-1.10.1/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

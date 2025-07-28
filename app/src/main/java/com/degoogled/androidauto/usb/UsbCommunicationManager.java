@@ -31,7 +31,7 @@ public class UsbCommunicationManager {
     private static final String TAG = "UsbCommunicationManager";
     
     // USB transfer constants
-    private static final int USB_TIMEOUT_MS = 5000;
+    private static final int USB_TIMEOUT_MS = 15000; // Increased to 15 seconds for Android Auto handshake
     private static final int MAX_PACKET_SIZE = 16384; // 16KB
     private static final int BUFFER_SIZE = 65536; // 64KB
     
@@ -307,7 +307,17 @@ public class UsbCommunicationManager {
     private int readData(byte[] buffer) throws IOException {
         if (currentDevice != null) {
             // Device mode - use bulk transfer
-            return deviceConnection.bulkTransfer(endpointIn, buffer, buffer.length, USB_TIMEOUT_MS);
+            int result = deviceConnection.bulkTransfer(endpointIn, buffer, buffer.length, USB_TIMEOUT_MS);
+            if (result < 0) {
+                if (result == -1) {
+                    logger.logError("USB read timeout after " + USB_TIMEOUT_MS + "ms - Head unit may not be responding");
+                    throw new IOException("USB read timeout - Head unit not responding. Check USB connection and try reconnecting.");
+                } else {
+                    logger.logError("USB bulk transfer failed with result: " + result);
+                    throw new IOException("USB communication error: " + result);
+                }
+            }
+            return result;
         } else if (currentAccessory != null) {
             // Accessory mode - use file stream
             return accessoryInputStream.read(buffer);
@@ -324,12 +334,20 @@ public class UsbCommunicationManager {
             // Device mode - use bulk transfer
             int result = deviceConnection.bulkTransfer(endpointOut, data, data.length, USB_TIMEOUT_MS);
             if (result < 0) {
-                throw new IOException("Bulk transfer failed: " + result);
+                if (result == -1) {
+                    logger.logError("USB write timeout after " + USB_TIMEOUT_MS + "ms - Head unit may not be responding");
+                    throw new IOException("USB write timeout - Head unit not responding. Check USB connection and try reconnecting.");
+                } else {
+                    logger.logError("USB bulk transfer failed with result: " + result);
+                    throw new IOException("USB communication error: " + result);
+                }
             }
+            logger.logDebug("Successfully wrote " + result + " bytes to USB");
         } else if (currentAccessory != null) {
             // Accessory mode - use file stream
             accessoryOutputStream.write(data);
             accessoryOutputStream.flush();
+            logger.logDebug("Successfully wrote " + data.length + " bytes to accessory");
         } else {
             throw new IOException("No active USB connection");
         }
