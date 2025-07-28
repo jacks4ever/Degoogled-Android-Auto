@@ -402,7 +402,7 @@ public class SimpleMainActivity extends AppCompatActivity {
      * Show about dialog
      */
     private void showAboutDialog() {
-        String aboutText = "Degoogled Android Auto v1.1.0\n\n" +
+        String aboutText = "Degoogled Android Auto v1.2.0\n\n" +
                           "A privacy-focused Android Auto implementation\n" +
                           "specifically optimized for 2023 Nissan Pathfinder.\n\n" +
                           "Features:\n" +
