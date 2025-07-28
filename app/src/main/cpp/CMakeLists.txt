@@ -4,7 +4,7 @@ project("degoogledandroidauto")
 
 # Include the protocol handler source files
 file(GLOB_RECURSE PROTOCOL_HANDLER_SOURCES
-    "${CMAKE_CURRENT_SOURCE_DIR}/../../../src/protocol_handler/*.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../../../../src/protocol_handler/*.cpp"
 )
 
 # Create the native library
@@ -28,5 +28,5 @@ target_link_libraries(
 target_include_directories(
     native-lib
     PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../../src
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../../../src
 )
