@@ -9,7 +9,6 @@
 #include <thread>
 #include <queue>
 #include <condition_variable>
-#include <boost/asio.hpp>
 #include "IMessagingApp.hpp"
 #include "../common/Log.hpp"
 
