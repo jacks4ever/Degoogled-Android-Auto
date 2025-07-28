@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -shared -Wl,-soname,libdegoogled_aa.so -o libdegoogled_aa.so CMakeFiles/degoogled_aa.dir/src/protocol_handler/app/K9MailMessagingApp.cpp.o  /usr/lib/x86_64-linux-gnu/libboost_system.so.1.74.0 

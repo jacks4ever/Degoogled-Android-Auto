@@ -3,6 +3,12 @@
 #include <memory>
 #include <string>
 #include <vector>
+#include <functional>
+#include <ctime>
+#include <mutex>
+#include <thread>
+#include <queue>
+#include <condition_variable>
 #include <boost/asio.hpp>
 #include "IMessagingApp.hpp"
 #include "../common/Log.hpp"
@@ -19,13 +25,11 @@ public:
     
     /**
      * @brief Construct a new K9MailMessagingApp object
-     * 
-     * @param ioService Boost IO service for asynchronous operations
      */
-    K9MailMessagingApp(boost::asio::io_service& ioService)
-        : ioService_(ioService)
-        , strand_(ioService_)
-        , isStarted_(false) {
+    K9MailMessagingApp()
+        : isStarted_(false)
+        , workerThread_()
+        , shouldStop_(false) {
     }
     
     /**
@@ -39,34 +43,37 @@ public:
      * @brief Start the messaging app
      */
     void start() override {
-        strand_.dispatch([this]() {
-            if (isStarted_) {
-                return;
-            }
-            
-            LOG(info) << "Starting K-9 Mail messaging app";
-            
-            // TODO: Initialize K-9 Mail integration
-            
-            isStarted_ = true;
-        });
+        std::lock_guard<std::mutex> lock(mutex_);
+        if (isStarted_) {
+            return;
+        }
+        
+        LOG(info) << "Starting K-9 Mail messaging app";
+        
+        // TODO: Initialize K-9 Mail integration
+        
+        isStarted_ = true;
     }
     
     /**
      * @brief Stop the messaging app
      */
     void stop() override {
-        strand_.dispatch([this]() {
-            if (!isStarted_) {
-                return;
-            }
-            
-            LOG(info) << "Stopping K-9 Mail messaging app";
-            
-            // TODO: Clean up K-9 Mail integration
-            
-            isStarted_ = false;
-        });
+        std::lock_guard<std::mutex> lock(mutex_);
+        if (!isStarted_) {
+            return;
+        }
+        
+        LOG(info) << "Stopping K-9 Mail messaging app";
+        
+        // TODO: Clean up K-9 Mail integration
+        
+        shouldStop_ = true;
+        if (workerThread_.joinable()) {
+            workerThread_.join();
+        }
+        
+        isStarted_ = false;
     }
     
     /**
@@ -75,7 +82,8 @@ public:
      * @param promise Promise to fulfill with the conversations
      */
     void getConversations(ConversationsPromise::Pointer promise) override {
-        strand_.dispatch([this, promise]() {
+        std::thread([this, promise]() {
+            std::lock_guard<std::mutex> lock(mutex_);
             if (!isStarted_) {
                 promise->reject(error::Error(error::ErrorCode::NOT_STARTED, "K-9 Mail messaging app not started"));
                 return;
@@ -115,7 +123,7 @@ public:
             conversations.push_back(conversation3);
             
             promise->resolve(conversations);
-        });
+        }).detach();
     }
     
     /**
@@ -127,7 +135,8 @@ public:
      * @param promise Promise to fulfill with the messages
      */
     void getMessages(const std::string& conversationId, int limit, int offset, MessagesPromise::Pointer promise) override {
-        strand_.dispatch([this, conversationId, limit, offset, promise]() {
+        std::thread([this, conversationId, limit, offset, promise]() {
+            std::lock_guard<std::mutex> lock(mutex_);
             if (!isStarted_) {
                 promise->reject(error::Error(error::ErrorCode::NOT_STARTED, "K-9 Mail messaging app not started"));
                 return;
@@ -295,7 +304,7 @@ public:
             }
             
             promise->resolve(messages);
-        });
+        }).detach();
     }
     
     /**
@@ -307,7 +316,8 @@ public:
      * @param promise Promise to fulfill when the message is sent
      */
     void sendMessage(const std::string& conversationId, const std::string& content, const std::vector<Attachment>& attachments, common::VoidPromise::Pointer promise) override {
-        strand_.dispatch([this, conversationId, content, attachments, promise]() {
+        std::thread([this, conversationId, content, attachments, promise]() {
+            std::lock_guard<std::mutex> lock(mutex_);
             if (!isStarted_) {
                 promise->reject(error::Error(error::ErrorCode::NOT_STARTED, "K-9 Mail messaging app not started"));
                 return;
@@ -319,7 +329,7 @@ public:
             // For now, we'll just pretend it was sent successfully
             
             promise->resolve();
-        });
+        }).detach();
     }
     
     /**
@@ -329,7 +339,8 @@ public:
      * @param promise Promise to fulfill when the conversation is marked as read
      */
     void markConversationAsRead(const std::string& conversationId, common::VoidPromise::Pointer promise) override {
-        strand_.dispatch([this, conversationId, promise]() {
+        std::thread([this, conversationId, promise]() {
+            std::lock_guard<std::mutex> lock(mutex_);
             if (!isStarted_) {
                 promise->reject(error::Error(error::ErrorCode::NOT_STARTED, "K-9 Mail messaging app not started"));
                 return;
@@ -341,7 +352,7 @@ public:
             // For now, we'll just pretend it was marked as read successfully
             
             promise->resolve();
-        });
+        }).detach();
     }
     
     /**
@@ -351,7 +362,8 @@ public:
      * @param promise Promise to fulfill with the new conversation ID
      */
     void createConversation(const std::vector<std::string>& recipients, common::Promise<std::string>::Pointer promise) override {
-        strand_.dispatch([this, recipients, promise]() {
+        std::thread([this, recipients, promise]() {
+            std::lock_guard<std::mutex> lock(mutex_);
             if (!isStarted_) {
                 promise->reject(error::Error(error::ErrorCode::NOT_STARTED, "K-9 Mail messaging app not started"));
                 return;
@@ -366,12 +378,13 @@ public:
             std::string conversationId = "k9_conversation_" + std::to_string(std::time(nullptr));
             
             promise->resolve(conversationId);
-        });
+        }).detach();
     }
     
 private:
-    boost::asio::io_service& ioService_;
-    boost::asio::io_service::strand strand_;
+    std::mutex mutex_;
+    std::thread workerThread_;
+    bool shouldStop_;
     bool isStarted_;
 };
 

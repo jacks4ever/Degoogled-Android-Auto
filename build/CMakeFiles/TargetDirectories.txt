@@ -1,0 +1,7 @@
+/workspace/Degoogled-Android-Auto/build/CMakeFiles/degoogled_aa.dir
+/workspace/Degoogled-Android-Auto/build/CMakeFiles/edit_cache.dir
+/workspace/Degoogled-Android-Auto/build/CMakeFiles/rebuild_cache.dir
+/workspace/Degoogled-Android-Auto/build/CMakeFiles/list_install_components.dir
+/workspace/Degoogled-Android-Auto/build/CMakeFiles/install.dir
+/workspace/Degoogled-Android-Auto/build/CMakeFiles/install/local.dir
+/workspace/Degoogled-Android-Auto/build/CMakeFiles/install/strip.dir
