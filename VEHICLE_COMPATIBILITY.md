@@ -2,50 +2,78 @@
 
 ## Nissan Pathfinder (2023) Compatibility
 
-The Degoogled Android Auto implementation should work with the 2023 Nissan Pathfinder's head unit display, but there are some important considerations:
+The Degoogled Android Auto implementation has been specifically optimized for the 2023 Nissan Pathfinder's head unit display with enhanced compatibility features.
 
 ### Current Status
 
-- **Basic USB Connection**: The app includes USB accessory filters that should allow it to be recognized when connected to the vehicle's USB port.
-- **Protocol Support**: The implementation includes a basic protocol handler service that mimics the Android Auto protocol without Google services.
-- **Head Unit Integration**: The app should be detected by the Nissan Pathfinder's infotainment system when connected via USB.
+- **Enhanced USB Connection**: The app includes Nissan Pathfinder-specific USB accessory filters that allow it to be recognized when connected to the vehicle's USB port.
+- **Adaptive Protocol Support**: The implementation includes an advanced protocol handler with multiple authentication methods, including Nissan-specific protocols.
+- **Display Optimization**: Automatic detection and optimization for the Nissan Pathfinder's display characteristics, including proper scaling of UI elements.
+- **Comprehensive Logging**: Detailed connection and protocol logging to help diagnose any issues.
 
-### Known Limitations
+### Nissan Pathfinder-Specific Optimizations
 
-1. **Authentication**: Some vehicle head units may expect Google's authentication protocol, which this implementation bypasses.
-2. **Manufacturer-Specific Features**: Nissan-specific features may not be fully supported.
-3. **Wireless Connection**: Currently only USB connections are supported; wireless Android Auto is not implemented.
-4. **Voice Commands**: Voice command integration with the vehicle's system may be limited.
+1. **USB Device Recognition**: Added specific USB vendor and product IDs for Nissan Pathfinder head units.
+2. **Authentication Fallbacks**: Multiple authentication methods with automatic fallback if the primary method fails.
+3. **Display Adaptation**: Automatic adjustment of UI scaling, touch targets, and fonts for optimal visibility on the Pathfinder's display.
+4. **Diagnostic Tools**: Built-in diagnostic information and log export for troubleshooting.
 
 ### Setup Instructions for Nissan Pathfinder
 
 1. Install the Degoogled Android Auto APK on your device.
-2. Enable Developer Options on your Android device.
-3. Enable USB Debugging in Developer Options.
-4. Connect your device to the Nissan Pathfinder's USB port using a high-quality data cable.
-5. When prompted on your phone, allow the USB connection for Android Auto.
+2. Launch the app and grant all requested permissions.
+3. Connect your device to the Nissan Pathfinder's USB port using a high-quality data cable (important: use the cable that came with your phone or a certified USB data cable).
+4. When prompted on your phone, allow the USB connection for Android Auto.
+5. If the connection isn't established automatically, tap "Connect" in the app's menu.
 6. On the vehicle's display, select the Android Auto option if it doesn't launch automatically.
 
-### Troubleshooting
+### Troubleshooting Nissan Pathfinder Connection
 
 If the connection is not established:
 
-1. Try using different USB cables - some cables are charge-only and don't support data transfer.
-2. Restart both your phone and the vehicle's infotainment system.
-3. Check if your phone is recognized as a USB device by the vehicle.
-4. Ensure the app has all required permissions granted.
+1. **USB Cable Issues**: Try using different USB cables - many cables are charge-only and don't support data transfer. Use the cable that came with your phone or a certified USB data cable.
+2. **USB Port Selection**: Try different USB ports in your Pathfinder - some may be charge-only.
+3. **App Permissions**: Ensure all permissions are granted in the app settings.
+4. **Export Logs**: Use the "Export Logs" option in the app menu to save connection logs, which can help diagnose issues.
+5. **Restart Sequence**: Try this specific restart sequence:
+   - Disconnect the USB cable
+   - Close the app completely
+   - Restart your phone
+   - Restart your vehicle's infotainment system (turn off the vehicle, wait 30 seconds, then restart)
+   - Launch the app first, then connect the USB cable
 
-## General Vehicle Compatibility
+### Known Limitations with Nissan Pathfinder
 
-This implementation has been designed to work with most vehicles that support Android Auto, but compatibility cannot be guaranteed for all models and manufacturers. The implementation focuses on the core protocol without relying on Google services.
+1. **First-time Connection**: The first connection attempt may fail as the app learns the specific characteristics of your vehicle. Disconnect and reconnect to resolve.
+2. **Voice Command Integration**: Voice commands work but may have limited integration with the vehicle's native voice system.
+3. **Wireless Connection**: Currently only USB connections are supported; wireless Android Auto is not implemented.
+4. **Navigation Transitions**: When switching between navigation and other features, there may be a slight delay.
 
-### Supported Features
+## Supported Features
 
-- Navigation using OsmAnd
-- Music playback with VLC
-- Phone calls
-- Messaging
+- **Navigation**: Full integration with OsmAnd for navigation, with turn-by-turn directions displayed on the Pathfinder's screen.
+- **Media Playback**: Music and audio playback through VLC, with album art and controls displayed on the head unit.
+- **Phone Calls**: Incoming and outgoing call support with contact integration.
+- **Messaging**: SMS and messaging app integration with notification display and reply options.
 
-### Testing Status
+## Diagnostic Information
 
-This implementation is in active development and has been tested with limited vehicle models. User feedback on compatibility with specific vehicles is welcome.
+The app includes built-in diagnostic tools to help troubleshoot connection issues:
+
+1. **Connection Logs**: Detailed logs of all connection attempts and protocol messages.
+2. **USB Device Information**: Information about connected USB devices and their characteristics.
+3. **Protocol Diagnostics**: Details about the protocol handshake and authentication process.
+4. **Display Information**: Information about the detected display characteristics and optimizations applied.
+
+To access diagnostic information, tap the menu button and select "Diagnostics" from the dropdown menu.
+
+## Reporting Compatibility Issues
+
+If you encounter issues with your Nissan Pathfinder, please report them with the following information:
+
+1. Your phone model and Android version
+2. Exact year and trim level of your Nissan Pathfinder
+3. Description of the issue
+4. Exported logs from the app (using the "Export Logs" option)
+
+This information will help us further optimize the app for Nissan Pathfinder compatibility.
