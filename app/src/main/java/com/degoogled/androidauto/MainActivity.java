@@ -19,19 +19,20 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.degoogled.androidauto.service.ProtocolHandlerService;
-import com.degoogled.androidauto.ui.DisplayAdapter;
-import com.degoogled.androidauto.utils.LogManager;
+import com.degoogled.androidauto.logging.ConnectionLogger;
+import com.degoogled.androidauto.ui.NissanDisplayAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements ProtocolHandlerService.ProtocolStateListener {
+public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private static final int PERMISSION_REQUEST_CODE = 1001;
     
     private BottomNavigationView bottomNav;
-    private DisplayAdapter displayAdapter;
+    private NissanDisplayAdapter displayAdapter;
+    private ConnectionLogger logger;
     private ProtocolHandlerService protocolService;
     private boolean serviceBound = false;
     
@@ -56,19 +57,20 @@ public class MainActivity extends AppCompatActivity implements ProtocolHandlerSe
         setContentView(R.layout.activity_main);
         
         // Initialize logging
-        LogManager.i(TAG, "Degoogled Android Auto started");
-        LogManager.setVerboseLogging(true);
+        logger = ConnectionLogger.getInstance(this);
+        logger.logInfo("Degoogled Android Auto started - MainActivity onCreate");
+        logger.setVerboseLogging(true);
         
         // Initialize display adapter for screen optimization
-        displayAdapter = new DisplayAdapter(this);
-        LogManager.i(TAG, "Display adapter initialized. Is Nissan Pathfinder: " + 
-                displayAdapter.isNissanPathfinder());
+        displayAdapter = new NissanDisplayAdapter(this);
+        logger.logInfo("Nissan Pathfinder display adapter initialized: " + 
+                displayAdapter.getDisplayProfile().toString());
         
         // Initialize bottom navigation
         bottomNav = findViewById(R.id.bottomNavigation);
         bottomNav.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();
-            LogManager.d(TAG, "Navigation item selected: " + itemId);
+            logger.logDebug("Navigation item selected: " + itemId);
             // Handle navigation item selection here
             return true;
         });
@@ -95,13 +97,15 @@ public class MainActivity extends AppCompatActivity implements ProtocolHandlerSe
     private void handleUsbIntent(Intent intent) {
         if (intent != null && intent.getAction() != null) {
             String action = intent.getAction();
-            LogManager.i(TAG, "Received intent action: " + action);
+            logger.logInfo("Received intent action: " + action);
             
             if (UsbManager.ACTION_USB_ACCESSORY_ATTACHED.equals(action)) {
-                LogManager.i(TAG, "USB accessory attached, connecting to head unit");
-                if (protocolService != null) {
-                    protocolService.connectToHeadUnit();
-                }
+                logger.logInfo("USB accessory attached, starting connection process");
+                // The enhanced ProtocolHandlerService will handle the connection automatically
+                Toast.makeText(this, "Nissan Pathfinder detected - Connecting...", Toast.LENGTH_SHORT).show();
+            } else if (UsbManager.ACTION_USB_DEVICE_ATTACHED.equals(action)) {
+                logger.logInfo("USB device attached, checking compatibility");
+                Toast.makeText(this, "USB device detected - Checking compatibility...", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -111,30 +115,9 @@ public class MainActivity extends AppCompatActivity implements ProtocolHandlerSe
      */
     private void startProtocolHandlerService() {
         Intent serviceIntent = new Intent(this, ProtocolHandlerService.class);
-        startForegroundService(serviceIntent);
-        bindService(serviceIntent, serviceConnection, Context.BIND_AUTO_CREATE);
+        startService(serviceIntent);
+        logger.logInfo("ProtocolHandlerService started");
     }
-    
-    /**
-     * Service connection for binding to the protocol handler service
-     */
-    private final ServiceConnection serviceConnection = new ServiceConnection() {
-        @Override
-        public void onServiceConnected(ComponentName name, IBinder service) {
-            ProtocolHandlerService.LocalBinder binder = (ProtocolHandlerService.LocalBinder) service;
-            protocolService = binder.getService();
-            protocolService.setStateListener(MainActivity.this);
-            serviceBound = true;
-            
-            LogManager.i(TAG, "Connected to ProtocolHandlerService");
-        }
-        
-        @Override
-        public void onServiceDisconnected(ComponentName name) {
-            serviceBound = false;
-            LogManager.i(TAG, "Disconnected from ProtocolHandlerService");
-        }
-    };
     
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -146,42 +129,79 @@ public class MainActivity extends AppCompatActivity implements ProtocolHandlerSe
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         
-        if (id == R.id.action_connect) {
-            if (protocolService != null) {
-                protocolService.connectToHeadUnit();
-            }
-            return true;
-        } else if (id == R.id.action_disconnect) {
-            if (protocolService != null) {
-                protocolService.disconnectFromHeadUnit();
-            }
-            return true;
-        } else if (id == R.id.action_export_logs) {
-            if (protocolService != null) {
-                protocolService.exportLogs();
-            }
+        if (id == R.id.action_export_logs) {
+            exportLogs();
             return true;
         } else if (id == R.id.action_diagnostics) {
             showDiagnosticInfo();
             return true;
+        // Removed verbose logging menu item for now
         }
         
         return super.onOptionsItemSelected(item);
+    }
+    
+    private void exportLogs() {
+        try {
+            java.io.File logDir = logger.exportLogs();
+            if (logDir != null) {
+                Toast.makeText(this, "Logs exported to: " + logDir.getAbsolutePath(), 
+                             Toast.LENGTH_LONG).show();
+                logger.logInfo("Logs exported successfully");
+            } else {
+                Toast.makeText(this, "Failed to export logs", Toast.LENGTH_SHORT).show();
+            }
+        } catch (Exception e) {
+            Toast.makeText(this, "Error exporting logs: " + e.getMessage(), 
+                         Toast.LENGTH_LONG).show();
+            logger.logError("Failed to export logs: " + e.getMessage());
+        }
+    }
+    
+    private void toggleVerboseLogging() {
+        // Toggle verbose logging
+        boolean currentState = true; // We'd need to track this state
+        logger.setVerboseLogging(!currentState);
+        Toast.makeText(this, "Verbose logging " + (!currentState ? "enabled" : "disabled"), 
+                     Toast.LENGTH_SHORT).show();
     }
     
     /**
      * Show diagnostic information dialog
      */
     private void showDiagnosticInfo() {
-        if (protocolService != null) {
-            String diagnosticInfo = protocolService.getDiagnosticInfo();
-            
-            new AlertDialog.Builder(this)
-                    .setTitle("Diagnostic Information")
-                    .setMessage(diagnosticInfo)
-                    .setPositiveButton("OK", null)
-                    .show();
-        }
+        StringBuilder diagnosticInfo = new StringBuilder();
+        
+        // Display information
+        NissanDisplayAdapter.DisplayProfile profile = displayAdapter.getDisplayProfile();
+        diagnosticInfo.append("=== Nissan Pathfinder Compatibility ===\n");
+        diagnosticInfo.append("Display: ").append(profile.widthPx).append("x").append(profile.heightPx).append("\n");
+        diagnosticInfo.append("Size: ").append(profile.size).append("\n");
+        diagnosticInfo.append("Density: ").append(profile.density).append(" (").append(profile.densityDpi).append(" dpi)\n");
+        diagnosticInfo.append("Font Scale: ").append(profile.fontScale).append("\n");
+        diagnosticInfo.append("Touch Target: ").append(profile.optimalTouchTargetPx).append("px\n");
+        diagnosticInfo.append("Orientation: ").append(profile.orientation).append("\n\n");
+        
+        // Layout recommendations
+        NissanDisplayAdapter.LayoutRecommendations layout = displayAdapter.getLayoutRecommendations();
+        diagnosticInfo.append("=== Layout Recommendations ===\n");
+        diagnosticInfo.append("Max Columns: ").append(layout.maxColumns).append("\n");
+        diagnosticInfo.append("Max Rows: ").append(layout.maxRows).append("\n");
+        diagnosticInfo.append("Margins: ").append(layout.marginDp).append("dp\n");
+        diagnosticInfo.append("Padding: ").append(layout.paddingDp).append("dp\n\n");
+        
+        // System information
+        diagnosticInfo.append("=== System Information ===\n");
+        diagnosticInfo.append("Device: ").append(android.os.Build.MODEL).append("\n");
+        diagnosticInfo.append("Android: ").append(android.os.Build.VERSION.RELEASE).append("\n");
+        diagnosticInfo.append("App Version: 1.0.1\n");
+        
+        new AlertDialog.Builder(this)
+                .setTitle("Nissan Pathfinder Diagnostics")
+                .setMessage(diagnosticInfo.toString())
+                .setPositiveButton("OK", null)
+                .setNeutralButton("Export Logs", (dialog, which) -> exportLogs())
+                .show();
     }
     
     /**
@@ -227,28 +247,8 @@ public class MainActivity extends AppCompatActivity implements ProtocolHandlerSe
     
     @Override
     protected void onDestroy() {
-        if (serviceBound) {
-            unbindService(serviceConnection);
-            serviceBound = false;
-        }
-        
         super.onDestroy();
-    }
-    
-    // ProtocolStateListener implementation
-    
-    @Override
-    public void onStateChanged(boolean connected, String message) {
-        runOnUiThread(() -> {
-            Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-            // Update UI based on connection state
-        });
-    }
-    
-    @Override
-    public void onError(String error) {
-        runOnUiThread(() -> {
-            Toast.makeText(this, "Error: " + error, Toast.LENGTH_LONG).show();
-        });
+        logger.logInfo("MainActivity destroyed");
+        // Logger will be closed by the service
     }
 }

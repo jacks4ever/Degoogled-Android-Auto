@@ -201,8 +201,8 @@ public class UsbDeviceManager {
             }
             
             LogManager.i(TAG, "Device info - Manufacturer: " + 
-                    connection.getManufacturerName() + 
-                    ", Product: " + connection.getProductName() + 
+                    device.getManufacturerName() + 
+                    ", Product: " + device.getProductName() + 
                     ", Serial: " + serialNumber);
             
             if (connectionListener != null) {
