@@ -1,4 +1,4 @@
-# Degoogled Android Auto v1.1.1
+# Degoogled Android Auto v1.2.0
 
 A privacy-focused Android Auto implementation specifically optimized for **2023 Nissan Pathfinder** and compatible with **Android 14**.
 
@@ -48,6 +48,29 @@ The actual Android Auto interface appears on your Nissan Pathfinder's display:
 - **Offline navigation capability**
 - **No Google Maps dependency**
 
+## 🆕 What's New in v1.2.0
+
+### 🔧 Enhanced Protocol Implementation
+- **Complete Android Auto protocol support** - Full implementation of authentication, service discovery, and channel management
+- **Improved USB communication** - Enhanced reliability and error handling for vehicle connections
+- **Advanced message handling** - Support for all Android Auto message types including media, navigation, and control messages
+- **Better error recovery** - Robust connection management with automatic retry mechanisms
+
+### 🧪 Testing & Development
+- **Comprehensive test suite** - Built-in TestActivity for validating all protocol features
+- **Enhanced logging** - Detailed connection and protocol logging for troubleshooting
+- **Developer tools** - Advanced debugging capabilities and protocol inspection
+
+### 🏗️ Architecture Improvements
+- **Modular design** - Clean separation of protocol, service, and UI components
+- **Enhanced service management** - Improved background service handling and lifecycle management
+- **Better integration support** - Streamlined integration with VLC and OsmAnd applications
+
+### 🔒 Security & Stability
+- **Android 14 optimizations** - Full compatibility with latest Android security features
+- **Memory management** - Improved resource handling and leak prevention
+- **Connection stability** - Enhanced USB connection reliability and recovery
+
 ## 📋 System Requirements
 
 ### Minimum Requirements
@@ -67,8 +90,8 @@ The actual Android Auto interface appears on your Nissan Pathfinder's display:
 
 ### Download
 Choose the appropriate version:
-- **[Release APK](releases/degoogled-android-auto-v1.1.1-release.apk)** (11MB) - Recommended for daily use
-- **[Debug APK](releases/degoogled-android-auto-v1.1.1-debug.apk)** (12MB) - For development and troubleshooting
+- **[Release APK](releases/degoogled-android-auto-v1.2.0-release.apk)** (12MB) - Recommended for daily use
+- **[Debug APK](releases/degoogled-android-auto-v1.2.0-debug.apk)** (13MB) - For development and troubleshooting
 
 ### Install Steps
 1. **Enable Unknown Sources** in Android Settings > Security

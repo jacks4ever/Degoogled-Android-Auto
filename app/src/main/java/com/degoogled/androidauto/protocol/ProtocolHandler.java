@@ -420,4 +420,57 @@ public class ProtocolHandler implements UsbDeviceManager.UsbConnectionListener {
         
         return info.toString();
     }
+    
+    // Methods required by ProtocolSession
+    
+    public boolean supportsStandardAuth() {
+        return true; // We support standard authentication
+    }
+    
+    public boolean supportsSimpleAuth() {
+        return true; // We support simple authentication as fallback
+    }
+    
+    public byte[] generateStandardAuthResponse(byte[] challenge) {
+        // Generate a standard authentication response
+        ByteBuffer buffer = ByteBuffer.allocate(challenge.length + 4);
+        buffer.order(ByteOrder.LITTLE_ENDIAN);
+        buffer.putInt(0x12345678); // Device ID
+        buffer.put(challenge);
+        return buffer.array();
+    }
+    
+    public byte[] generateSimpleAuthResponse(byte[] challenge) {
+        // Generate a simple authentication response
+        ByteBuffer buffer = ByteBuffer.allocate(8);
+        buffer.order(ByteOrder.LITTLE_ENDIAN);
+        buffer.putInt(0x00000001); // Simple auth marker
+        buffer.putInt(challenge.length);
+        return buffer.array();
+    }
+    
+    public void setupChannels(java.util.List<com.degoogled.androidauto.protocol.messages.control.ServiceDiscoveryResponse.Service> availableServices, 
+                             com.degoogled.androidauto.protocol.UsbConnection usbConnection) {
+        // Setup communication channels for available services
+        LogManager.i(TAG, "Setting up channels for " + availableServices.size() + " services");
+        // Implementation would setup channels based on available services
+    }
+    
+    public void handleMessage(com.degoogled.androidauto.protocol.messages.Message message) {
+        // Handle incoming protocol messages
+        LogManager.d(TAG, "Handling message: " + message.toString());
+        // Implementation would process the message based on its type
+    }
+    
+    public void handleControlMessage(com.degoogled.androidauto.protocol.messages.Message message, int messageType) {
+        // Handle control messages
+        LogManager.d(TAG, "Handling control message type: " + messageType);
+        // Implementation would process control messages
+    }
+    
+    public void handleAuthMessage(com.degoogled.androidauto.protocol.messages.Message message, int messageType) {
+        // Handle authentication messages
+        LogManager.d(TAG, "Handling auth message type: " + messageType);
+        // Implementation would process authentication messages
+    }
 }

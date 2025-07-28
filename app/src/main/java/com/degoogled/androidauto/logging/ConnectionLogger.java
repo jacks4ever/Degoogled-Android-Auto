@@ -218,6 +218,35 @@ public class ConnectionLogger {
         Log.e(TAG, logMessage);
     }
     
+    public void logError(String message, Exception e) {
+        String logMessage = "[ERROR] " + getCurrentTimestamp() + ": " + message + " - " + e.getMessage();
+        logToFile(logMessage);
+        Log.e(TAG, logMessage, e);
+    }
+    
+    public void logConnection(String message) {
+        String logMessage = "[CONNECTION] " + getCurrentTimestamp() + ": " + message;
+        logToFile(logMessage);
+        if (verboseLogging) {
+            Log.i(TAG, logMessage);
+        }
+    }
+    
+    public void logRawData(String direction, byte[] data) {
+        if (data != null && verboseLogging) {
+            String message = String.format("Raw data [%s]: %s (%d bytes)", 
+                                          direction, bytesToHex(data, 32), data.length);
+            logDebug(message);
+        }
+    }
+    
+    public void logMessage(String direction, com.degoogled.androidauto.protocol.messages.Message message) {
+        if (message != null) {
+            String logMessage = String.format("Message [%s]: %s", direction, message.toString());
+            logDebug(logMessage);
+        }
+    }
+    
     public void logWarning(String message) {
         String logMessage = "[WARNING] " + getCurrentTimestamp() + ": " + message;
         logToFile(logMessage);

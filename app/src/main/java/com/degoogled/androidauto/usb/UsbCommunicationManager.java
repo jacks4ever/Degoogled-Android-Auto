@@ -2,6 +2,7 @@ package com.degoogled.androidauto.usb;
 
 import android.content.Context;
 import android.hardware.usb.UsbAccessory;
+import android.hardware.usb.UsbConstants;
 import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbDeviceConnection;
 import android.hardware.usb.UsbEndpoint;
@@ -211,11 +212,11 @@ public class UsbCommunicationManager {
         for (int i = 0; i < usbInterface.getEndpointCount(); i++) {
             UsbEndpoint endpoint = usbInterface.getEndpoint(i);
             
-            if (endpoint.getType() == UsbEndpoint.USB_ENDPOINT_XFER_BULK) {
-                if (endpoint.getDirection() == UsbEndpoint.USB_DIR_IN) {
+            if (endpoint.getType() == UsbConstants.USB_ENDPOINT_XFER_BULK) {
+                if (endpoint.getDirection() == UsbConstants.USB_DIR_IN) {
                     endpointIn = endpoint;
                     logger.logInfo("Found bulk IN endpoint");
-                } else if (endpoint.getDirection() == UsbEndpoint.USB_DIR_OUT) {
+                } else if (endpoint.getDirection() == UsbConstants.USB_DIR_OUT) {
                     endpointOut = endpoint;
                     logger.logInfo("Found bulk OUT endpoint");
                 }

@@ -84,10 +84,28 @@ public class LogManager {
     }
     
     /**
+     * Log a warning message with exception
+     */
+    public static void w(String tag, String message, Throwable throwable) {
+        String fullMessage = message + " - " + throwable.getMessage();
+        log(tag, fullMessage, LogLevel.WARNING);
+        Log.w(tag, message, throwable); // Also log with stack trace to LogCat
+    }
+    
+    /**
      * Log an error message
      */
     public static void e(String tag, String message) {
         log(tag, message, LogLevel.ERROR);
+    }
+    
+    /**
+     * Log an error message with exception
+     */
+    public static void e(String tag, String message, Throwable throwable) {
+        String fullMessage = message + " - " + throwable.getMessage();
+        log(tag, fullMessage, LogLevel.ERROR);
+        Log.e(tag, message, throwable); // Also log with stack trace to LogCat
     }
     
     /**
