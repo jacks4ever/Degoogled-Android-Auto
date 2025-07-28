@@ -1,3 +1,6 @@
 # ninja log v5
-0	258	1753660472612781367	CMakeFiles/native-lib.dir/native-lib.cpp.o	98cd618b4056ec5
 258	275	1753660472632781321	/workspace/Degoogled-Android-Auto/app/build/intermediates/cxx/RelWithDebInfo/1r1f6t5w/obj/x86_64/libnative-lib.so	c7186f277a559f1
+0	258	1753660472612781367	CMakeFiles/native-lib.dir/native-lib.cpp.o	98cd618b4056ec5
+0	22	1753662228416708248	build.ninja	f6d0d6fcfcb741d7
+0	3	0	clean	146b4c8a4deb0979
+0	3	0	clean	146b4c8a4deb0979

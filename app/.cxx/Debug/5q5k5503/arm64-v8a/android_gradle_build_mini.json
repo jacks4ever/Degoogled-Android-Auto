@@ -1,0 +1,27 @@
+{
+  "buildFiles": [
+    "/workspace/Degoogled-Android-Auto/app/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/workspace/android-sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/workspace/Degoogled-Android-Auto/app/.cxx/Debug/5q5k5503/arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/workspace/android-sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/workspace/Degoogled-Android-Auto/app/.cxx/Debug/5q5k5503/arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "native-lib::@6890427a1f51a3e7e1df": {
+      "artifactName": "native-lib",
+      "abi": "arm64-v8a",
+      "output": "/workspace/Degoogled-Android-Auto/app/build/intermediates/cxx/Debug/5q5k5503/obj/arm64-v8a/libnative-lib.so",
+      "runtimeFiles": []
+    }
+  }
+}
