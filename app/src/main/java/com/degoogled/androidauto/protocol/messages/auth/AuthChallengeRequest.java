@@ -23,11 +23,12 @@ public class AuthChallengeRequest extends Message {
     }
     
     /**
-     * Create a new authentication challenge request from raw data
+     * Create a new authentication challenge request from raw payload data
      */
-    public AuthChallengeRequest(byte[] payload) {
-        super(MessageTypes.CHANNEL_AUTH, MessageTypes.AUTH_MSG_CHALLENGE_REQUEST);
-        deserializePayload(payload);
+    public static AuthChallengeRequest fromPayload(byte[] payload) {
+        AuthChallengeRequest request = new AuthChallengeRequest(new byte[0]);
+        request.deserializePayload(payload);
+        return request;
     }
     
     /**

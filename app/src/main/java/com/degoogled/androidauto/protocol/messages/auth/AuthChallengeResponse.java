@@ -23,11 +23,12 @@ public class AuthChallengeResponse extends Message {
     }
     
     /**
-     * Create a new authentication challenge response from raw data
+     * Create a new authentication challenge response from raw payload data
      */
-    public AuthChallengeResponse(byte[] payload) {
-        super(MessageTypes.CHANNEL_AUTH, MessageTypes.AUTH_MSG_CHALLENGE_RESPONSE);
-        deserializePayload(payload);
+    public static AuthChallengeResponse fromPayload(byte[] payload) {
+        AuthChallengeResponse response = new AuthChallengeResponse(new byte[0]);
+        response.deserializePayload(payload);
+        return response;
     }
     
     /**

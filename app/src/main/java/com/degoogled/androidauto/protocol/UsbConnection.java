@@ -101,7 +101,7 @@ public class UsbConnection {
             }
             
             return true;
-        } catch (IOException e) {
+        } catch (Exception e) {
             LogManager.e(TAG, "Error connecting to accessory", e);
             logger.logError("Connection error: " + e.getMessage());
             closeConnection();
