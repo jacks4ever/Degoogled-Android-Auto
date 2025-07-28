@@ -1,0 +1,40 @@
+{
+  "buildFiles": [
+    "/workspace/Degoogled-Android-Auto/app/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/workspace/android-sdk/cmake/3.22.1/bin/ninja",
+      "-v",
+      "-C",
+      "/workspace/Degoogled-Android-Auto/app/.cxx/Debug/6z6i5nhw/armeabi-v7a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/workspace/android-sdk/cmake/3.22.1/bin/ninja",
+    "-v",
+    "-C",
+    "/workspace/Degoogled-Android-Auto/app/.cxx/Debug/6z6i5nhw/armeabi-v7a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "native-lib::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "native-lib",
+      "output": "/workspace/Degoogled-Android-Auto/app/build/intermediates/cxx/Debug/6z6i5nhw/obj/armeabi-v7a/libnative-lib.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/workspace/android-sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/bin/clang.lld",
+      "cppCompilerExecutable": "/workspace/android-sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++.lld"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

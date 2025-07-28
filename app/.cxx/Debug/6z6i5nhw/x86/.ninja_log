@@ -1,0 +1,8 @@
+# ninja log v5
+0	284	1753663815997030412	CMakeFiles/native-lib.dir/native-lib.cpp.o	190e37cdf045ba9
+0	411	1753663816125030116	CMakeFiles/native-lib.dir/workspace/Degoogled-Android-Auto/src/protocol_handler/app/K9MailMessagingApp.cpp.o	5487991454f68726
+411	427	1753663816145030070	/workspace/Degoogled-Android-Auto/app/build/intermediates/cxx/Debug/6z6i5nhw/obj/x86/libnative-lib.so	4266d0bd4338e5c7
+0	2	0	clean	146b4c8a4deb0979
+9	327	1753663890048858837	CMakeFiles/native-lib.dir/native-lib.cpp.o	190e37cdf045ba9
+1	513	1753663890232858411	CMakeFiles/native-lib.dir/workspace/Degoogled-Android-Auto/src/protocol_handler/app/K9MailMessagingApp.cpp.o	5487991454f68726
+513	532	1753663890256858355	/workspace/Degoogled-Android-Auto/app/build/intermediates/cxx/Debug/6z6i5nhw/obj/x86/libnative-lib.so	4266d0bd4338e5c7

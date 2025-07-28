@@ -1,2 +1,0 @@
-ninja: Entering directory `/workspace/Degoogled-Android-Auto/app/.cxx/Debug/5q5k5503/arm64-v8a'
-ninja: no work to do.

@@ -1,0 +1,250 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.degoogled.androidauto"
+4    android:versionCode="2"
+5    android:versionName="1.0.1" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+8-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:4:5-67
+11-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:4:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:5:5-79
+12-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:5:22-76
+13    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+13-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:6:5-79
+13-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:6:22-76
+14    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+14-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:7:5-81
+14-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:7:22-78
+15    <uses-permission android:name="android.permission.BLUETOOTH" />
+15-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:8:5-68
+15-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:8:22-65
+16    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+16-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:9:5-74
+16-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:9:22-71
+17    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+17-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:10:5-76
+17-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:10:22-73
+18    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+18-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:11:5-71
+18-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:11:22-68
+19    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+19-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:12:5-80
+19-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:12:22-77
+20    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+20-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:13:5-81
+20-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:13:22-78
+21    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+21-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:14:5-75
+21-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:14:22-72
+22    <uses-permission android:name="android.permission.READ_CONTACTS" />
+22-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:15:5-72
+22-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:15:22-69
+23    <uses-permission android:name="android.permission.READ_SMS" />
+23-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:16:5-67
+23-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:16:22-64
+24    <uses-permission android:name="android.permission.SEND_SMS" />
+24-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:17:5-67
+24-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:17:22-64
+25    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+25-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:18:5-77
+25-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:18:22-74
+26
+27    <permission
+27-->[androidx.core:core:1.9.0] /root/.gradle/caches/transforms-3/ec4f76f6c0c02de8ba18086e7bd9baf5/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+28        android:name="com.degoogled.androidauto.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+28-->[androidx.core:core:1.9.0] /root/.gradle/caches/transforms-3/ec4f76f6c0c02de8ba18086e7bd9baf5/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+29        android:protectionLevel="signature" />
+29-->[androidx.core:core:1.9.0] /root/.gradle/caches/transforms-3/ec4f76f6c0c02de8ba18086e7bd9baf5/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+30
+31    <uses-permission android:name="com.degoogled.androidauto.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+31-->[androidx.core:core:1.9.0] /root/.gradle/caches/transforms-3/ec4f76f6c0c02de8ba18086e7bd9baf5/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+31-->[androidx.core:core:1.9.0] /root/.gradle/caches/transforms-3/ec4f76f6c0c02de8ba18086e7bd9baf5/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+32
+33    <supports-screens
+33-->[org.osmdroid:osmdroid-android:6.1.16] /root/.gradle/caches/transforms-3/c9f55ccbadaf518126a307bacbd39211/transformed/osmdroid-android-6.1.16/AndroidManifest.xml:9:5-12:40
+34        android:anyDensity="true"
+34-->[org.osmdroid:osmdroid-android:6.1.16] /root/.gradle/caches/transforms-3/c9f55ccbadaf518126a307bacbd39211/transformed/osmdroid-android-6.1.16/AndroidManifest.xml:10:9-34
+35        android:largeScreens="true"
+35-->[org.osmdroid:osmdroid-android:6.1.16] /root/.gradle/caches/transforms-3/c9f55ccbadaf518126a307bacbd39211/transformed/osmdroid-android-6.1.16/AndroidManifest.xml:11:9-36
+36        android:normalScreens="true" />
+36-->[org.osmdroid:osmdroid-android:6.1.16] /root/.gradle/caches/transforms-3/c9f55ccbadaf518126a307bacbd39211/transformed/osmdroid-android-6.1.16/AndroidManifest.xml:12:9-37
+37
+38    <uses-feature
+38-->[org.osmdroid:osmdroid-android:6.1.16] /root/.gradle/caches/transforms-3/c9f55ccbadaf518126a307bacbd39211/transformed/osmdroid-android-6.1.16/AndroidManifest.xml:14:5-16:36
+39        android:name="android.hardware.location.network"
+39-->[org.osmdroid:osmdroid-android:6.1.16] /root/.gradle/caches/transforms-3/c9f55ccbadaf518126a307bacbd39211/transformed/osmdroid-android-6.1.16/AndroidManifest.xml:15:9-57
+40        android:required="false" />
+40-->[org.osmdroid:osmdroid-android:6.1.16] /root/.gradle/caches/transforms-3/c9f55ccbadaf518126a307bacbd39211/transformed/osmdroid-android-6.1.16/AndroidManifest.xml:16:9-33
+41    <uses-feature
+41-->[org.osmdroid:osmdroid-android:6.1.16] /root/.gradle/caches/transforms-3/c9f55ccbadaf518126a307bacbd39211/transformed/osmdroid-android-6.1.16/AndroidManifest.xml:17:5-19:36
+42        android:name="android.hardware.location.gps"
+42-->[org.osmdroid:osmdroid-android:6.1.16] /root/.gradle/caches/transforms-3/c9f55ccbadaf518126a307bacbd39211/transformed/osmdroid-android-6.1.16/AndroidManifest.xml:18:9-53
+43        android:required="false" />
+43-->[org.osmdroid:osmdroid-android:6.1.16] /root/.gradle/caches/transforms-3/c9f55ccbadaf518126a307bacbd39211/transformed/osmdroid-android-6.1.16/AndroidManifest.xml:19:9-33
+44    <uses-feature
+44-->[org.osmdroid:osmdroid-android:6.1.16] /root/.gradle/caches/transforms-3/c9f55ccbadaf518126a307bacbd39211/transformed/osmdroid-android-6.1.16/AndroidManifest.xml:20:5-22:36
+45        android:name="android.hardware.telephony"
+45-->[org.osmdroid:osmdroid-android:6.1.16] /root/.gradle/caches/transforms-3/c9f55ccbadaf518126a307bacbd39211/transformed/osmdroid-android-6.1.16/AndroidManifest.xml:21:9-50
+46        android:required="false" />
+46-->[org.osmdroid:osmdroid-android:6.1.16] /root/.gradle/caches/transforms-3/c9f55ccbadaf518126a307bacbd39211/transformed/osmdroid-android-6.1.16/AndroidManifest.xml:22:9-33
+47    <uses-feature
+47-->[org.osmdroid:osmdroid-android:6.1.16] /root/.gradle/caches/transforms-3/c9f55ccbadaf518126a307bacbd39211/transformed/osmdroid-android-6.1.16/AndroidManifest.xml:23:5-25:36
+48        android:name="android.hardware.wifi"
+48-->[org.osmdroid:osmdroid-android:6.1.16] /root/.gradle/caches/transforms-3/c9f55ccbadaf518126a307bacbd39211/transformed/osmdroid-android-6.1.16/AndroidManifest.xml:24:9-45
+49        android:required="false" />
+49-->[org.osmdroid:osmdroid-android:6.1.16] /root/.gradle/caches/transforms-3/c9f55ccbadaf518126a307bacbd39211/transformed/osmdroid-android-6.1.16/AndroidManifest.xml:25:9-33
+50
+51    <application
+51-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:20:5-61:19
+52        android:allowBackup="true"
+52-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:21:9-35
+53        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+53-->[androidx.core:core:1.9.0] /root/.gradle/caches/transforms-3/ec4f76f6c0c02de8ba18086e7bd9baf5/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+54        android:extractNativeLibs="false"
+55        android:icon="@android:drawable/ic_menu_compass"
+55-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:22:9-57
+56        android:label="@string/app_name"
+56-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:23:9-41
+57        android:roundIcon="@android:drawable/ic_menu_compass"
+57-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:24:9-62
+58        android:supportsRtl="true"
+58-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:25:9-35
+59        android:theme="@style/Theme.DegoogledAndroidAuto" >
+59-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:26:9-58
+60        <activity
+60-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:28:9-45:20
+61            android:name="com.degoogled.androidauto.MainActivity"
+61-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:29:13-41
+62            android:exported="true"
+62-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:30:13-36
+63            android:screenOrientation="landscape"
+63-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:31:13-50
+64            android:theme="@style/Theme.DegoogledAndroidAuto.NoActionBar" >
+64-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:32:13-74
+65            <intent-filter>
+65-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:33:13-36:29
+66                <action android:name="android.intent.action.MAIN" />
+66-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:34:17-69
+66-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:34:25-66
+67
+68                <category android:name="android.intent.category.LAUNCHER" />
+68-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:35:17-77
+68-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:35:27-74
+69            </intent-filter>
+70
+71            <!-- USB accessory filter for Android Auto head units -->
+72            <intent-filter>
+72-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:39:13-41:29
+73                <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" />
+73-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:40:17-93
+73-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:40:25-90
+74            </intent-filter>
+75
+76            <meta-data
+76-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:42:13-44:60
+77                android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED"
+77-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:43:17-82
+78                android:resource="@xml/accessory_filter" />
+78-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:44:17-57
+79        </activity>
+80
+81        <service
+81-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:47:9-50:40
+82            android:name="com.degoogled.androidauto.service.ProtocolHandlerService"
+82-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:48:13-59
+83            android:enabled="true"
+83-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:49:13-35
+84            android:exported="false" />
+84-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:50:13-37
+85        <service
+85-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:52:9-55:40
+86            android:name="com.degoogled.androidauto.service.NavigationService"
+86-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:53:13-54
+87            android:enabled="true"
+87-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:54:13-35
+88            android:exported="false" />
+88-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:55:13-37
+89        <service
+89-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:57:9-60:40
+90            android:name="com.degoogled.androidauto.service.MediaService"
+90-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:58:13-49
+91            android:enabled="true"
+91-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:59:13-35
+92            android:exported="false" />
+92-->/workspace/Degoogled-Android-Auto/app/src/main/AndroidManifest.xml:60:13-37
+93
+94        <provider
+94-->[androidx.emoji2:emoji2:1.2.0] /root/.gradle/caches/transforms-3/791b39fe68826e8543c46f2d7f8b152e/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+95            android:name="androidx.startup.InitializationProvider"
+95-->[androidx.emoji2:emoji2:1.2.0] /root/.gradle/caches/transforms-3/791b39fe68826e8543c46f2d7f8b152e/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+96            android:authorities="com.degoogled.androidauto.androidx-startup"
+96-->[androidx.emoji2:emoji2:1.2.0] /root/.gradle/caches/transforms-3/791b39fe68826e8543c46f2d7f8b152e/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+97            android:exported="false" >
+97-->[androidx.emoji2:emoji2:1.2.0] /root/.gradle/caches/transforms-3/791b39fe68826e8543c46f2d7f8b152e/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+98            <meta-data
+98-->[androidx.emoji2:emoji2:1.2.0] /root/.gradle/caches/transforms-3/791b39fe68826e8543c46f2d7f8b152e/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+99                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+99-->[androidx.emoji2:emoji2:1.2.0] /root/.gradle/caches/transforms-3/791b39fe68826e8543c46f2d7f8b152e/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+100                android:value="androidx.startup" />
+100-->[androidx.emoji2:emoji2:1.2.0] /root/.gradle/caches/transforms-3/791b39fe68826e8543c46f2d7f8b152e/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+101            <meta-data
+101-->[androidx.lifecycle:lifecycle-process:2.6.1] /root/.gradle/caches/transforms-3/1a68d17af36dbcea950a8a66c430e2e1/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
+102                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+102-->[androidx.lifecycle:lifecycle-process:2.6.1] /root/.gradle/caches/transforms-3/1a68d17af36dbcea950a8a66c430e2e1/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
+103                android:value="androidx.startup" />
+103-->[androidx.lifecycle:lifecycle-process:2.6.1] /root/.gradle/caches/transforms-3/1a68d17af36dbcea950a8a66c430e2e1/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
+104            <meta-data
+104-->[androidx.profileinstaller:profileinstaller:1.3.0] /root/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+105                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+105-->[androidx.profileinstaller:profileinstaller:1.3.0] /root/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+106                android:value="androidx.startup" />
+106-->[androidx.profileinstaller:profileinstaller:1.3.0] /root/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+107        </provider>
+108
+109        <receiver
+109-->[androidx.profileinstaller:profileinstaller:1.3.0] /root/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+110            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+110-->[androidx.profileinstaller:profileinstaller:1.3.0] /root/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+111            android:directBootAware="false"
+111-->[androidx.profileinstaller:profileinstaller:1.3.0] /root/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+112            android:enabled="true"
+112-->[androidx.profileinstaller:profileinstaller:1.3.0] /root/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+113            android:exported="true"
+113-->[androidx.profileinstaller:profileinstaller:1.3.0] /root/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+114            android:permission="android.permission.DUMP" >
+114-->[androidx.profileinstaller:profileinstaller:1.3.0] /root/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+115            <intent-filter>
+115-->[androidx.profileinstaller:profileinstaller:1.3.0] /root/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+116                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+116-->[androidx.profileinstaller:profileinstaller:1.3.0] /root/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+116-->[androidx.profileinstaller:profileinstaller:1.3.0] /root/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+117            </intent-filter>
+118            <intent-filter>
+118-->[androidx.profileinstaller:profileinstaller:1.3.0] /root/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+119                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+119-->[androidx.profileinstaller:profileinstaller:1.3.0] /root/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+119-->[androidx.profileinstaller:profileinstaller:1.3.0] /root/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+120            </intent-filter>
+121            <intent-filter>
+121-->[androidx.profileinstaller:profileinstaller:1.3.0] /root/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+122                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+122-->[androidx.profileinstaller:profileinstaller:1.3.0] /root/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+122-->[androidx.profileinstaller:profileinstaller:1.3.0] /root/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+123            </intent-filter>
+124            <intent-filter>
+124-->[androidx.profileinstaller:profileinstaller:1.3.0] /root/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+125                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+125-->[androidx.profileinstaller:profileinstaller:1.3.0] /root/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+125-->[androidx.profileinstaller:profileinstaller:1.3.0] /root/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+126            </intent-filter>
+127        </receiver>
+128    </application>
+129
+130</manifest>

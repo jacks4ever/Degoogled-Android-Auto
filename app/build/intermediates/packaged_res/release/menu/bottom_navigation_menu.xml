@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation"
+        android:icon="@android:drawable/ic_dialog_map"
+        android:title="@string/navigation" />
+    <item
+        android:id="@+id/media"
+        android:icon="@android:drawable/ic_media_play"
+        android:title="@string/media" />
+    <item
+        android:id="@+id/phone"
+        android:icon="@android:drawable/ic_menu_call"
+        android:title="@string/phone" />
+    <item
+        android:id="@+id/messaging"
+        android:icon="@android:drawable/ic_dialog_email"
+        android:title="@string/messaging" />
+    <item
+        android:id="@+id/settings"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:title="@string/settings" />
+</menu>

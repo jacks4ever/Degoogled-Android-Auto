@@ -1,0 +1,3 @@
+/workspace/Degoogled-Android-Auto/app/.cxx/Debug/6z6i5nhw/x86_64/CMakeFiles/native-lib.dir
+/workspace/Degoogled-Android-Auto/app/.cxx/Debug/6z6i5nhw/x86_64/CMakeFiles/edit_cache.dir
+/workspace/Degoogled-Android-Auto/app/.cxx/Debug/6z6i5nhw/x86_64/CMakeFiles/rebuild_cache.dir
