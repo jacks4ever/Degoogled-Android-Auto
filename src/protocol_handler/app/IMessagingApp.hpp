@@ -3,6 +3,7 @@
 #include <memory>
 #include <string>
 #include <vector>
+#include <ctime>
 #include "../common/Promise.hpp"
 #include "../common/Error.hpp"
 
@@ -16,7 +17,7 @@ struct Conversation {
     std::string id;
     std::string name;
     std::string lastMessage;
-    time_t timestamp;
+    std::time_t timestamp;
     int unreadCount;
     bool isGroup;
 };
@@ -30,7 +31,7 @@ struct Message {
     std::string senderId;
     std::string senderName;
     std::string content;
-    time_t timestamp;
+    std::time_t timestamp;
     bool isRead;
     bool isOutgoing;
 };

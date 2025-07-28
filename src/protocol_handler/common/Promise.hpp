@@ -73,15 +73,27 @@ public:
         }
     }
 
-private:
+protected:
     ResolveCallback resolveCallback_;
     RejectCallback rejectCallback_;
 };
 
 /**
- * @brief Void promise
+ * @brief Void promise class
  */
-typedef Promise<void*> VoidPromise;
+class VoidPromise : public Promise<void*> {
+public:
+    typedef std::shared_ptr<VoidPromise> Pointer;
+    
+    /**
+     * @brief Resolve the promise without arguments
+     */
+    void resolve() {
+        if (resolveCallback_) {
+            resolveCallback_(nullptr);
+        }
+    }
+};
 
 } // namespace common
 } // namespace degoogled_aa

@@ -11,12 +11,12 @@ namespace common {
  * @brief Log level
  */
 enum class LogLevel {
-    TRACE,
-    DEBUG,
-    INFO,
-    WARNING,
-    ERROR,
-    FATAL
+    trace,
+    debug,
+    info,
+    warning,
+    error,
+    fatal
 };
 
 /**
