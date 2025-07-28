@@ -89,9 +89,9 @@ The actual Android Auto interface appears on your Nissan Pathfinder's display:
 ## 🔧 Installation
 
 ### Download
-Choose the appropriate version:
-- **[Release APK](releases/degoogled-android-auto-v1.2.0-release.apk)** (12MB) - Recommended for daily use
-- **[Debug APK](releases/degoogled-android-auto-v1.2.0-debug.apk)** (13MB) - For development and troubleshooting
+Choose the appropriate version from the [v1.2.0 Release](https://github.com/jacks4ever/Degoogled-Android-Auto/releases/tag/v1.2.0):
+- **[Release APK](https://github.com/jacks4ever/Degoogled-Android-Auto/releases/download/v1.2.0/degoogled-android-auto-v1.2.0-release.apk)** (10.6MB) - Recommended for daily use
+- **[Debug APK](https://github.com/jacks4ever/Degoogled-Android-Auto/releases/download/v1.2.0/degoogled-android-auto-v1.2.0-debug.apk)** (11.9MB) - For development and troubleshooting
 
 ### Install Steps
 1. **Enable Unknown Sources** in Android Settings > Security
